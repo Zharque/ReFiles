@@ -1,0 +1,96 @@
+CCS 8 2023.02.07
+
+One customer buys one or more items.
+One item (category) is bought by one or more customers.*
+
+*When the product being sold cannot be disinguished from one product to another, one or more customeres is allowed
+
+|ItemNo	|ItemDes	|Price	|QtyH
+|I-001	|Bath Soap	|32		|28
+|I-002	|Laun. S.	|150		|40
+|I-003	|Shampoo	|48		|10
+
+[CUSTOMER]->|-<buys>-|<-[ITEMS]
+many to many
+
+change it into an associative entity
+
+[CUSTOMER]-||-|<-[<SALES_TRAN>]->|-||-[ITEM]
+
+
+---
+
+One customer buys one or more cars.
+One car (not category) is bought by one customer.
+
+---
+
+One customer rents one or more cars.
+One car is rented by one customer.
+
+One customer rents one or more cars.
+One car is rented by one or more customers.
+
+Both are correct, however the second is valid only if there is no date stamp. It is invalid if there is date stamp.
+
+---
+
+Unary: 
+One employee manages zero or more employees.
+One employee is managed by one employee.
+
+	+-||---------+
+[EMPLOYEE]		<manages>
+	+->0---------+
+
+clockwise
+
+---
+
+gorcery store
+
+A.
+*an employee is required or needed to complete the transaction (cashier)
+
+EMPLOYEE
+CUSTOMER 
+ITEM
+
+Ternary:
+One employee sells one or more items to one or more customer.
+One customer buys one or more items from one employee.
+One item is bought by one or more customers from one or more employees.
+(One item is sold by one or more employees to one or more customers.)
+
+[EMPLOYEE]->|-<sells>-|<-[ITEMS]
+		  	 |
+		      +--|<-[CUSTOMER]
+
+transform into an associative entity
+
+[EMPLOYEE]-||-|<-[<SALES_TRAN>]-|>-||-[ITEMS]
+		  	    	   |
+			        +->|-||-[CUSTOMER]
+
+
+B.
+ *no need for an employee (RFID reader & card reader)
+
+CUSTOMER
+ITEM
+
+---
+TOOLS USED
+ERDPLUS.COM
+
+
+
+
+
+
+
+
+
+
+
+

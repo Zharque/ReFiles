@@ -1,0 +1,10 @@
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\bin\x86\Debug\SampleProg.exe.config
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\bin\x86\Debug\SampleProg.exe
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\bin\x86\Debug\SampleProg.pdb
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\obj\x86\Debug\WindowsApplication1.FormMainStud.resources
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\obj\x86\Debug\WindowsApplication1.FormEnroll.resources
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\obj\x86\Debug\WindowsApplication1.FormLogin.resources
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\obj\x86\Debug\WindowsApplication1.Resources.resources
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\obj\x86\Debug\SampleProg.vbproj.GenerateResource.Cache
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\obj\x86\Debug\SampleProg.exe
+D:\Re\School\2nd Year 2nd Sem\CCS 5\SampleProg\SampleProg\obj\x86\Debug\SampleProg.pdb

@@ -1,0 +1,10 @@
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\bin\Debug\CCS5 Miscellaneous.exe.config
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\bin\Debug\CCS5 Miscellaneous.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\bin\Debug\CCS5 Miscellaneous.pdb
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\bin\Debug\CCS5 Miscellaneous.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\obj\Debug\CCS5 Miscellaneous.vbproj.GenerateResource.Cache
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\obj\Debug\CCS5 Miscellaneous.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\obj\Debug\CCS5 Miscellaneous.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Miscellaneous\CCS5 Miscellaneous\obj\Debug\CCS5 Miscellaneous.pdb

@@ -1,0 +1,10 @@
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\bin\Debug\CCS5 Strings.exe.config
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\bin\Debug\CCS5 Strings.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\bin\Debug\CCS5 Strings.pdb
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\bin\Debug\CCS5 Strings.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\obj\Debug\CCS5 Strings.vbproj.GenerateResource.Cache
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\obj\Debug\CCS5 Strings.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\obj\Debug\CCS5 Strings.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Strings\CCS5 Strings\obj\Debug\CCS5 Strings.pdb

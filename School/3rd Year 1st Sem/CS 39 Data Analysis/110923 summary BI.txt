@@ -1,0 +1,62 @@
+Business Intelligence
+-BI is a broad category of applications and technologies for gathering, storing, analyzing, and providing access to data to help enterprise users make better business decisions.
+-BI technologies provide historical, current and predictive views of business operations.
+-BI uses technologies, processes, and applications to analyze mostly internal, structured data and business processes
+
+competitive intelligence 
+-gaters, analyzes and disseminates information with a topical focus on company competitors
+
+BI Business Purposes
+1. Measurement
+2. Analytics
+3. Reporting/Enterprise Reporting
+4. Collaboration/Collaboration platform
+5. Knowledge Management
+
+Common Functions of Business Intelligence Technologies
+1. data mining
+2. online analytical processing
+3. Analytics
+4. process mining
+5. business performance management
+6. benchmarking
+7. text mining
+8. predictive analytics
+9. Reporting
+
+Forms of Reporting 
+1. List Reporting
+2. Interactive Analysis
+3. Ad-hoc Querying
+4. Metric Management
+5. Dashboard
+6. Balance Scorecards
+
+Types of Report
+1. Standard vs. Ad-hoc
+2. Condensed vs. Detailed 
+3. Key Figures vs. Master Data 
+4. Replication in the Data Warehouse vs. Direct Access
+
+Classification of Report
+1. Parameterized Reports
+2. Linked Reports
+3. Snapshot Reports
+4. Cached Reports
+5. Clickthrough Reports
+6. Drilldown Reports
+7. Drillthrough Report
+8. Subreport
+
+The Role of Data Visualization in Business Intelligence
+-provides  quick and effective way to communicate information in a universal manner using visual information
+- help businesses identify factors, areas to improve, make data memorable, and predict sales volumes
+
+Definition
+Competitive Intelligence
+Key Purposes
+Common Functions 
+Data Visualization
+
+
+

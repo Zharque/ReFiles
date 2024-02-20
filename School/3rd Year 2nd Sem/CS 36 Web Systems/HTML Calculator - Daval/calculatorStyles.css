@@ -1,0 +1,30 @@
+.calcOuter {
+    background-color: #dddddd;
+    border-radius: 10px; 
+    padding: 20px; 
+}
+.calcDisplay {
+    color: #000000;
+    border-radius: 10px;
+    text-align: right;
+    background-color: white;
+}
+.calcButton {
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+.cb1 {
+    color: #003cff;
+}
+.cb2 {
+    color: #000000;
+}
+.cb3 {
+    background-color: #003cff;
+    color: white;
+}
+.pastSpan {
+    cursor: pointer;
+}

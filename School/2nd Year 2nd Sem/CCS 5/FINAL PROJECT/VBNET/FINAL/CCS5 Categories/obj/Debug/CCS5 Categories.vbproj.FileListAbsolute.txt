@@ -1,0 +1,10 @@
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\bin\Debug\CCS5 Categories.exe.config
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\bin\Debug\CCS5 Categories.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\bin\Debug\CCS5 Categories.pdb
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\bin\Debug\CCS5 Categories.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\obj\Debug\CCS5 Categories.vbproj.GenerateResource.Cache
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\obj\Debug\CCS5 Categories.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\obj\Debug\CCS5 Categories.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Categories\CCS5 Categories\obj\Debug\CCS5 Categories.pdb

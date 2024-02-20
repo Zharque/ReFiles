@@ -1,0 +1,11 @@
+Extract the zip file after downloading, otherwise it will not work inside the zip file.
+
+Open dataset_viewer.exe to access the program.
+
+The program may take a minute to open, due to the use of a text viewer window.
+
+source code.py contains the code for my program.
+
+
+
+By: Rynz A. Daval

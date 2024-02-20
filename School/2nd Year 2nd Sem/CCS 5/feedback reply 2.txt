@@ -1,0 +1,28 @@
+Good evening sir, we've made changes to our business rules and came up with this ERD:
+
+*image*
+
+Our new business rules are the following:
+
+1.One member reserves zero or more instruments.
+One instrument is reserved to zero or more members.
+
+Unlike our previous business rule 1 where it was a ternary rule along with 'Request', we no longer have an entity Request. Instead, the many-to-many relationship between 'Member' and 'Instrument' creates the binary associative entity 'Reservation'.
+
+2.One user cancels zero or more reservations.
+One reservation is canceled by zero or one user.
+
+This is the same with our previous rule 2, however we are no longer using 'Request' but instead the associative entity 'Reservation'.
+
+3. One manager confirms zero or more reservations.
+One reservation is confirmed by zero or one manager.
+
+The manager will be approving the reservation of the instrument on the day that the member claims the instrument. The payment will also be taken.
+If the start date has passed but the instrument has not been claimed, then the reservation will be canceled through business rule 2.
+
+4.One manager ends zero or more reservations.
+One reservation is ended by one manager.
+
+Once the end date of the reservation has arrived, the manager will confirm the retrieval of the instrument by ending the reservation.
+
+We'd like to ask for guidance if our current business rules and ERD has been properly made and if there are adjustments that we need to make. Thank you sir.

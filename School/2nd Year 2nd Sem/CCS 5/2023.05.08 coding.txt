@@ -1,0 +1,128 @@
+My first entity is ITEM and it has the following an int element item_no which is the primary key that is not null, a varchar(20) element called item_name that is not null, a varchar(20) element called item_category that is not null, a float element called item_value that is not null, and a float element daily_rate is that is not null.
+
+CREATE TABLE ITEM (item_no INT NOT NULL,item_name VARCHAR(20) NOT NULL,item_category VARCHAR(20) NOT NULL,item_value DECIMAL(10, 2) NOT NULL,daily_rate DECIMAL(10, 2) NOT NULL,PRIMARY KEY (item_no))
+
+My second entity is USER and it has the following elements: user_no that is int and primary key not null, user_type that is varchar(20) not null, user_fname that is varchar(20) not null, user_mi that is varchar(20), user_lname that is varchar(20) not null, user_id that is varchar(20) not null, user_pass that is varchar(20) not null.
+
+CREATE TABLE USER (user_no INT NOT NULL, user_type VARCHAR(20) NOT NULL, user_fname VARCHAR(20) NOT NULL, user_mi VARCHAR(20), user_lname VARCHAR(20) NOT NULL, user_id VARCHAR(20) NOT NULL, user_pass VARCHAR(20) NOT NULL, PRIMARY KEY (user_no))
+
+My entity USER has the subtypes MEMBER and MANAGER. They are disjoint subtypes. MEMBER has the element mem_no that is int not null, and MANAGER has the element manager_no that is int not null.
+
+CREATE TABLE MEMBER (user_no INT NOT NULL,mem_no INT NOT NULL,FOREIGN KEY (user_no) REFERENCES USER(user_no),PRIMARY KEY (user_no))
+
+CREATE TABLE MANAGER (user_no INT NOT NULL,manager_no INT NOT NULL,FOREIGN KEY (user_no) REFERENCES USER(user_no),PRIMARY KEY (user_no))
+
+My third entity is REQUEST. It has the following elements: res_no int not null primary key, user_no that is a foreign key from USER, item_no that is a foreign key from ITEM, start_date which is a date, end_date which is a date, daily_fee which is a float with two decimals not null, res_fee which is a float with two decimals and the default value of 0, and a total_fee which is a float that is not null.
+
+CREATE TABLE REQUEST (res_no INT NOT NULL,user_no INT NOT NULL,item_no INT NOT NULL,start_date DATE,end_date DATE,daily_fee DECIMAL(10, 2) NOT NULL,res_fee DECIMAL(10, 2) DEFAULT 0,total_fee DECIMAL(10, 2) NOT NULL,PRIMARY KEY (res_no),FOREIGN KEY (user_no) REFERENCES USER(user_no),FOREIGN KEY (item_no) REFERENCES ITEM(item_no))
+
+I have a relationship between user and request where the user cancels a request. The relationship has an element reason which is varchar(50). What do I do?
+
+CREATE TABLE USER_REQUEST_CANCELATION (user_no INT NOT NULL,res_no INT NOT NULL,reason VARCHAR(50), PRIMARY KEY (user_no, res_no),FOREIGN KEY (user_no) REFERENCES USER(user_no),FOREIGN KEY (res_no) REFERENCES REQUEST(res_no))
+
+Give me an example entry for a USER. You can make up the other data, but the user_type must be MEMBER.
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (1, 'MEMBER', 'John', 'D.', 'Doe', 'johndoe', 'password123')
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (2, 'MEMBER', 'Alice', 'M.', 'Smith', 'asmith', 'mypassword')
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass) VALUES (3, 'MANAGER', 'Bob', 'R.', 'Johnson', 'bjohnson', 'secretpass')
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (4, 'MANAGER', 'Emily', 'L.', 'Anderson', 'eanderson', 'managerpass')
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (5, 'MEMBER', 'Sarah', 'J.', 'Wilson', 'swilson', 'mypass123')
+
+How do I store the entries into the subtypes of USER?
+
+INSERT INTO MEMBER (user_no, mem_no) SELECT user_no, user_no FROM USER WHERE user_type = 'MEMBER'
+
+How do I edit the value of an entry in MEMBER where mem_no is 5 but I want it to be 3?
+
+UPDATE MEMBER SET mem_no = 3 WHERE mem_no = 5
+
+INSERT INTO MANAGER (user_no, manager_no) SELECT user_no, ROW_NUMBER() OVER (ORDER BY user_no) AS manager_no FROM USER WHERE user_type = 'MANAGER'
+
+Give 10 sample entries into entity ITEM. These items must be musical instruments and the item_category can only be the following: Brass, Keyboards, Percussions, Strings, Woodwinds, and Miscellaneous. Make sure that each category has an entry.
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (1, 'Trumpet', 'Brass', 500.00, 10.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (2, 'Piano', 'Keyboards', 2000.00, 30.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (3, 'Drum Set', 'Percussions', 800.00, 15.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (4, 'Violin', 'Strings', 600.00, 12.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (5, 'Flute', 'Woodwinds', 300.00, 8.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (6, 'Saxophone', 'Woodwinds', 700.00, 14.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (7, 'Guitar', 'Strings', 400.00, 10.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (8, 'Clarinet', 'Woodwinds', 350.00, 9.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (9, 'Trombone', 'Brass', 550.00, 11.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (10, 'Keyboard Stand', 'Miscellaneous', 100.00, 5.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (11, 'French Horn', 'Brass', 800.00, 16.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (12, 'Electric Guitar', 'Strings', 900.00, 18.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (13, 'Accordion', 'Keyboards', 1200.00, 25.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (14, 'Bass Drum', 'Percussions', 400.00, 10.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (15, 'Cello', 'Strings', 1500.00, 30.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (16, 'Oboe', 'Woodwinds', 600.00, 12.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (17, 'Tuba', 'Brass', 1000.00, 20.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (18, 'Xylophone', 'Percussions', 300.00, 8.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (19, 'Harmonica', 'Woodwinds', 50.00, 2.00)
+
+INSERT INTO ITEM (item_no, item_name, item_category, item_value, daily_rate)VALUES (20, 'Music Stand', 'Miscellaneous', 50.00, 2.00)
+
+Adjust the value to PHP
+
+UPDATE ITEM SET item_value = item_value * 50
+UPDATE ITEM SET DAILY_RATE = DAILY_RATE * 3
+
+More entries for USER
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (6, 'MEMBER', 'Olivia', 'N.', 'Wilson', 'oliviawilson', 'password6')
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (7, 'MEMBER', 'William', 'S.', 'Taylor', 'williamtaylor', 'password7')
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (8, 'MEMBER', 'Sophia', 'R.', 'Anderson', 'sophiaanderson', 'password8')
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (9, 'MEMBER', 'Daniel', 'K.', 'Thomas', 'danielthomas', 'password9')
+
+INSERT INTO USER (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass)VALUES (10, 'MEMBER', 'Ava', 'P.', 'Clark', 'avaclark', 'password10')
+
+How do I insert into MEMBER the entries from USER where the user_no is 6 and above, and the mem_no is dependent on what row it is?
+
+INSERT INTO MEMBER (user_no, mem_no) SELECT user_no, ROW_NUMBER() OVER (ORDER BY user_no) + (SELECT MAX(mem_no) FROM MEMBER) FROM USER WHERE user_no >= 6
+
+Delete my entity REQUEST. Recreate it but this time, user_no is replace with mem_no from entity MEMBER.
+
+DROP TABLE REQUEST
+
+CREATE TABLE REQUEST (res_no INT NOT NULL PRIMARY KEY,mem_no INT NOT NULL,item_no INT NOT NULL,start_date DATE,end_date DATE,daily_fee DECIMAL(10, 2) NOT NULL,res_fee DECIMAL(10, 2) DEFAULT 0,total_fee DECIMAL(10, 2) NOT NULL,reason VARCHAR(50),FOREIGN KEY (mem_no) REFERENCES MEMBER(mem_no),FOREIGN KEY (item_no) REFERENCES ITEM(item_no))
+
+ALTER TABLE MEMBER ADD CONSTRAINT mem_no UNIQUE (mem_no)
+
+Sample REQUEST entries
+
+
+INSERT INTO REQUEST (res_no, mem_no, item_no, start_date, end_date, daily_fee, res_fee, total_fee)VALUES (1, 1, 1, '2023-05-01', '2023-05-05', 50.00, 0.00, 0.00)
+
+INSERT INTO REQUEST (res_no, mem_no, item_no, start_date, end_date, daily_fee, res_fee, total_fee)VALUES (2, 2, 2, '2023-05-02', '2023-05-03', 50.00, 0.00, 0.00)
+
+INSERT INTO REQUEST (res_no, mem_no, item_no, start_date, end_date, daily_fee, res_fee, total_fee)VALUES (3, 4, 5, '2023-04-28', '2023-05-01', 150.00, 0.00, 150.00)
+
+-- Modify the REQUEST table
+ALTER TABLE REQUEST ALTER COLUMN reason SET DEFAULT 'Not Canceled'
+
+

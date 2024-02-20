@@ -1,0 +1,5 @@
+import db2 to visual studio 12
+
+Project
+References
+<Drive>/IBM/SQLLIB/BIN/netf40/IBMData.DB2.dll

@@ -1,0 +1,53 @@
+07.09.23Preprocessing
+
+What is a data?
+-Collection of data objects and their attributes
+-An attribute is a property or characteristic of an object
+-A collection of attributes describe and object
+
+Types of attributes
+Nominal(Categorical):
+-categories, states, or "names of things"
+-yes/no, 0/1, marital status, ID numbers, etc.
+
+Ordinal:
+-values have a meaningful order
+-size, month
+
+Numeric:
+-Quantity
+-ratios
+
+Why Data Preprocessing?
+Data in the real world is dirty
+-incomplete
+-noisy
+-inconsistent
+
+Data Cleaning
+Importance
+-Garbage in garbige out principle (GIGO)
+Tasks
+-Fill in missing values
+-Identify outliers and smooth out noisy data
+-Correct inconsistent data
+-Resolve redundancy
+
+How to resolve missing data
+Option 1: Remove rows with missing data
+Option 2: Fill by column average
+Option 3: Fill by linear interpolation
+Option 4: Fill by global constant (i.e. '0' or NA)
+Option 5: by most probable value
+
+
+
+
+
+
+
+
+
+
+
+

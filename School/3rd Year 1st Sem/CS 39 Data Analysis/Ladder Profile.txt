@@ -1,0 +1,8 @@
+Ladder Profile 
+1	Creators
+2	Conversationalists
+3	Critics
+4	Collectors 
+5	Joiners 
+6	Spectators
+7	Inactives

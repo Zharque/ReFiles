@@ -1,0 +1,164 @@
+Lesson 1 Introduction to Systems
+-System
+A system is a group of elements that regularly interact to form a unified whole.
+
+-Information System
+process data for decision-making
+
+-Parts of the System
+Environment (surrounds a system)
+Boundary (perimeter between a system and the environment)
+Inputs (enter the boundary from the environment)
+Processing (conversion of input to output)
+Outputs (product of processing)
+
+-Components of an Information System
+Hardware (physical layer)
+Software (system software and application software)
+Data (basic facts)
+Procedures (defined tasks performed by people)
+People (users and skilled professionals)
+
+-Decomposition
+breaking down a system into smaller components to make it more manageable and understandable
+
+-Modularity
+dividing a system into modules of a relatively uniform size
+
+-Coupling
+subsystems depend on each other
+strive for low coupling
+
+-Cohesion
+subsystem performs a single function
+strive for high cohesion
+
+-Types of Systems
+	Strategic Level
+	Management Level
+	Knowledge Level
+	Operational Level
+
+The Systems Development Life Cycle (SDLC)
+
+1. Identify 
+2. Determine requirements
+3. Analyze needs
+4. Design system
+5. Develop software
+6. Test the system
+7. Iplement the system
+
+---
+
+Lesson 2 Part 1 Introduction to Software and Software Engineering
+
+-Software
+	Instructions that provide function
+	Data structures that manipulate information
+	Descriptive information in hard copy and virtual forms
+
+-Software is both a product and a vehicle
+	product as an information transformer
+	vehicle that delivers information
+
+-Software Characteristics
+	developed or engineered
+	doesn't "wear out"
+
+-Attributes of Good Software
+	deliver the required functionality
+	Maintainability
+	Dependability and Security
+	Efficiency
+	Acceptability
+
+-Software Engineering
+	all aspects of software production
+
+-Fundamental Software Engineering Activities
+	software specification
+	software development
+	software validation
+	software evolution
+
+-Computer science focuses on theory
+-Software engineering is developing and delivering useful software
+-System engineering is all aspects of computer-based systems development
+
+-Key challenges facing software engineering
+	increasing diversity
+	reduced delibery times
+	developing trustworthy software 
+
+-Costs of Software Engineering
+	60% development costs
+	40% testing costs
+	evolution costs for custom software
+
+-The web has made software engineering more available and highly distributed
+
+Software Application Domains (Types of Applications)
+
+-System Software
+	-service other programs
+	-indeterminate
+	-interaction with hardware
+
+-Application Software
+	-stand-alone
+	-determinate
+	
+-Engineering/Scientific Software
+	number crunching algorithms
+
+-Embedded Software
+	resides within a system
+
+-Product-line Software
+	specific capability for many customers
+	spreadsheets, word, etc
+
+-Web Applications (WebApps)
+	Web 2.0 Social Web
+	wiki, youtube, fb
+	Web 3.0 Semantic Web
+	database
+	Web 4.0 Smart Web
+	autonomous
+
+-Artificial Intelligence Software
+	nonnumerical algorithms for complex problems
+	robotics
+	artificial neural networks
+	pattern recognition
+
+Attributes in Most Webapps
+-Network Intensiveness
+-Concurrency
+-Unpredictable Load
+-Performance
+-Availability
+-Data-driven
+-Content-sensitive
+-Continuous Evolution
+-Immediacy
+-Security
+-Aesthetics
+
+Software Engineering Principles
+1. The reason it all exists
+	to provide value to its users
+2. KISS (Keep it Simple, Stupid!)
+3. Maintain the Vision
+4. What you produce, others will consume
+5. Be open to the future
+6. Plan ahead for reuse
+7. Think!
+
+Software Engineering Ethics
+1. Confidentiality
+2. Competence
+3. Intellectual Property Rights
+4. Computer Misuse
+

@@ -1,0 +1,10 @@
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\bin\Debug\CCS5 Keyboards.exe.config
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\bin\Debug\CCS5 Keyboards.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\bin\Debug\CCS5 Keyboards.pdb
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\bin\Debug\CCS5 Keyboards.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\obj\Debug\CCS5 Keyboards.vbproj.GenerateResource.Cache
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\obj\Debug\CCS5 Keyboards.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\obj\Debug\CCS5 Keyboards.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Keyboards\CCS5 Keyboards\obj\Debug\CCS5 Keyboards.pdb

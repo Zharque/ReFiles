@@ -1,0 +1,226 @@
+Quiz #1, Tesday, February 14
+
+Coverage:
+1) Intro to database systems (objective type)
+2) Data modelling (essay & case study)
+
+---------
+
+Entity Relationship (ER) Modeling
+
+Entity Relationship Model (ERM)
+
+-ERM forms the basis of an ERD.
+-From the end-users; point of view, the ERD represents the conceptual database.
+-
+
+***Required and Optional Attributes
+-Required attribute is an attribute that must have a value at the time the instance is added. Null is not allowed as a value.
+-Optional attribute is an attribute that allows to be left empty at the instance is added.
+
+Domains
+-It is the set of possible values that an attribute can contain
+-It is writted as (<minimum>, <maximum>)
+-Examples: gender (M,F), QPA (0,4), years of service (0,30)
+-Attributes may share domain
+
+Identifiers
+
+Composite Identifiers
+-A primary key that is composed of more than one attribute
+
+Composite and Simple Attributes
+-A composite attribute (different from composite key) is an attribute that can be subdivided to new several attributes
+-Simple attribute is an attribute that cannot be subdivided into several new attributes
+Example:
+[STUDENT]
+-(name) //composite attribute
+--(fname) //simple attribute
+--(mname)
+--(lname)
+-(address) //composite attribute
+
+If client wants only full name, just keep full name
+If clients wants first name, middle name, and last name, then remove the full name attribute
+
+Single-valued Attributes
+-Is an attribute that can have only a single value
+-Examples: social security number, student id number
+-Note: a single-valued attribute is not necessarily a simple attribute
+
+Multivalued Attributes
+-Attributes that can have many values
+-Are shown (in Chen ERM) with a double line connecting the attribute and the entity
+Example:
+[STUDENT]
+=(PhoneNo) //multivalued
+-((PhoneNo)
+
+Implementing Multlivalued Attributes
+-Though multivalued attributes are allowed in the conceptual model do not implement then in the RDBMS
+-Resolve this problem with either:
+a. Within the original entity, create several new attributes for the multivalued attribute.
+b. Create a new entity of the original multivalued attributes' component
+
+Example:
+a. 
+[STUDENT]
+-(PhoneNo1)
+-(PhoneNo2)
+-(PhoneNo3)
+-(_StudID_)
+
+|_StudID_	|PhoneNo1	|PhoneNo2	|PhoneNo3	|
+|1-1-1111	|222-220	|222-221	|91-1111	|
+|1-1-1113	|-			|-			|-			|
+
+Disadvantage: Waste of memory, can't be sure where a particular attribute is stored in the table
+
+b.
+[STUDENT]-||-<has>-0<-[STUDPHONE]
+-(_StudID_)				-(_PhoneID_)
+							-(PhoneNo)
+
+STUDPHONE
+|_PhoneID_	|PhoneNo	|_ _StudID	|
+|1				|222-220	|1-1-1111		|
+|2				|222-220	|1-1-1111		|
+|3				|221-111	|1-1-1112		|
+|4				|91-1111	|1-1-1111		|
+
+Advantage: No wasted space, all data in one column for easy searching
+
+Derived attributes
+-It is an attribute whose value are calculated from other attributes
+-Need not be stored within the database
+-In the Chen notation, a dashed line is used to connect the attribute and the entity
+-Sometimes known as computed computed attributes
+-The decision to store dervied attributes depends on the processing requirements and the constraint placed on the application.
+
+Example:
+[STUDENT]
+-(DOB)
+- -(age) //dashed line
+
+or
+[STUDENT]
+-(DOB)
+-(age) //circle has gaps
+
+Derived Attribute
+*Stored
+**Advantage
+-Saves CPU processing cycles
+-Saves data access time
+-Data value is readily available
+-Can be used to keep track of historical data
+**Disadvantages
+-Requires constant maintenance to ensure derived value is current, especially if any values used in the calculation change
+
+*Not Stored
+**Advantages
+-Saves storage space
+-Computation always yields current value
+**Disadvantages
+-Uses CPU processing cycles
+-Increases data access time
+-Adds coding complexity to queries
+
+Relationships
+-Relationship name is an active verb or a passive verb
+
+Connectivity and cardinality
+-Cardinality expresses the minimum and maximum number of entity occurrences associated with one occurrence of the related entity
+-In the ERD, numbers in the format (x,y) placed near the entity indicated the cardinality
+-Note: a DBMS cannot handle the implementation of the cardinalities at the table level- it is done in the application program
+
+Cardinality example (-||- and -0<-)
+
+Weak () Relationships
+-Exists if the primary key (PK) of the related entity does not contain a PK component of the parent entity
+Example:
+-COURSE(_CRS_CODE_, DEPT_CODE, CRS_DESCRIPTION, CRS_CREDIT)
+-CLASS(_CLASS_CODE_, CRS_CODE, CLASS_SECTION, CLASS_TIME, ROOM_CODE, PROF_NUM)
+
+[COURSE]-<has>-[CLASS]
+
+Strong (Identifying) Relationships
+-exsists when the PK of the related entity contains a PK component of the parent entity 
+-the order in which the tables are created and loaded is very important
+
+Example:
+-COURSE(_CRS_CODE_, ...)
+-CLASS(_CRS_CODE_, _CLASS_SECTION_, ...)
+
+Note:Weak is easier to implement
+
+Weak Entity
+-is an entity type whose existence depense on some other entity type
+-A weak entity type has no business meaning in an E-R diagram without the entity on which it depends
+-It does not typically have its own identifier
+-Generally, on an E-R diagram, a weak entity type has an attribute that serves as a partial identifier
+
+Strong Entity
+-A strong entity type is one that exsists independently of other entity types - most of the basic entity types
+-basic entity
+-necessity
+
+Example:
+[EMPLOYEE]-||-<has>-0<-[[DEPENDENT]]
+strong - weak
+
+Concentric rectangle for weak entity
+
+Crow's Foot Symbols
+
+Relationship Degree
+-indicates the number of entities or participants associated with a relationship
+-A unary relationship exists when an asociation is maintained within a single entity - also known as recursive relationship
+-A binary relationship exsists when two entities are associated in a relationship
+--most common
+-A ternary relationship implies an association among three different entities
+--whenever possible, most higher-order (ternary and higher) relationships are decomposed into appropriate equivalent binary relationships
+
+example:
+
+1)[CUSTOMER]->|-<buys>-|<-[PRODUCT]
+					|
+					|
+					+-|<-[EMPLOYEE]
+
+2)[CUSTOMER]-||-|<-[<SALES_TRAN>]->|-||-[PRODUCT]
+						|
+						|
+						+->|-||-[EMPLOYEE]
+
+[<SALES_TRAN>]
+-(_OffRNo_)
+-((qtyBought))
+- -((subtotal))
+- -(grandTotal)
+
+3)
+[<SALES_TRAN>]-||-<has>-|<-[LINE_ITEM]
+-(_offRNo)				-(qtybought)
+- -(grandTotal)			-(subtotal)
+						-(_LineNo_)
+
+[CUSTOMER]-||-<owns>-|<-[<SALES_TRAN>]
+		 		    |	 |
+	           	  +->|-||-+	 +>|-<created by>-||-[EMPLOYEE]
+		       |	
+	      [LINE_ITEM]->|-<contains>-||-[PRODUCT]
+
+----
+The process of database design is an iterative rather than a linear or sequential process.
+-Building an ERD usually involes the following activities:
+*Create a detailed narrative of the organization's description of operations.
+*Identify the main entities and relationships from the business rules.
+*Develop the initial ERD.
+*Identify the attributes and primary keys that adequately describe the entities.
+*Revise and review the ERD
+
+
+
+
+

@@ -1,0 +1,12 @@
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\Debug\Enrollment.exe.config
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\Debug\Enrollment.exe
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\Debug\Enrollment.pdb
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\Debug\Enrollment.xml
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\Debug\Enrollment.FrmStudMaint.resources
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\Debug\Enrollment.Resources.resources
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\Debug\Enrollment.vbproj.GenerateResource.Cache
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\Debug\Enrollment.exe
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\Debug\Enrollment.xml
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\Debug\Enrollment.pdb
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\Debug\IBM.Data.DB2.dll
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\Debug\Enrollment.vbprojResolveAssemblyReference.cache

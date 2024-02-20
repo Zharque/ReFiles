@@ -1,0 +1,34 @@
+rules
+|1. a beneficiary can avail many types of loans
+|2. a beneficiary avails a loan 
+3. a beneficiary pays his/her loan
+
+1. one beneficiary avails zero or more loans
+- one loan is availed of by zero or more beneficiaries
+2. one beneficiary pays one or more loans
+- loan is paid by one beneficiary
+
+
+
+beneficiary
+-ID
+-name
+-address
+-occupation
+--items sold
+--store location
+--plate number 
+--destination
+-martial status
+-num of children
+-loan balance
+
+
+loan
+-ID
+-name
+-maximum
+
+
+
+

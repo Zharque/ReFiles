@@ -1,0 +1,7 @@
+db2 visual basic 
+error: insufficient access
+solution:
+
+db2 grant dbadm with dataaccess with accessctrl on database to user XXX
+db2 grant secadm on database to user XXX
+

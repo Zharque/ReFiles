@@ -1,0 +1,244 @@
+Again, write the code in one line as db2 command window is sensitive to line breaks.
+
+in DB2, create a table called User with the following attributes: 
+user_no	
+user_type	
+user_fname	
+user_mi	
+user_lname	
+user_id	
+user_pass
+
+All of them are varchar(20) and the primary key is user_no.
+
+CREATE TABLE User (user_no VARCHAR(20) PRIMARY KEY NOT NULL, user_type VARCHAR(20), user_fname VARCHAR(20), user_mi VARCHAR(20), user_lname VARCHAR(20), user_id VARCHAR(20), user_pass VARCHAR(20))
+
+
+Create a subtype of User called Member and it's primary key is a foreign key from User which is user_no.
+
+CREATE TABLE Member (member_no VARCHAR(20) NOT NULL PRIMARY KEY REFERENCES User(user_no) ON DELETE CASCADE)
+
+
+Create a subtype of User called Manager and it's primary key is a foreign key from User which is user_no.
+
+CREATE TABLE Manager (manager_no VARCHAR(20) NOT NULL PRIMARY KEY REFERENCES User(user_no) ON DELETE CASCADE)
+
+
+Create a table called Instrument with the following attributes:
+
+inst_no
+inst_name
+inst_category
+inst_availability
+inst_value
+daily_rate
+
+inst_value and daily_rate are decimals with 2 decimal points and the rest is varchar(20), with inst_no as the primary key.
+
+CREATE TABLE Instrument (inst_no VARCHAR(20) PRIMARY KEY NOT NULL, inst_name VARCHAR(20), inst_category VARCHAR(20), inst_availability VARCHAR(20), inst_value DECIMAL(10, 2), daily_rate DECIMAL(10, 2))
+
+
+Create an associative entity called Reservation. It has the following attributes:
+
+res_no (varchar(20) primary key not null)
+start_date (data type date)
+end_date (data type date)
+res_fee (decimal with 2 decimal places, default value of 0)
+daily_fee (derived decimal with 2 decimal places)
+total_fee (derived decimal with 2 decimal places)
+member_no (foreign key from Member with the same name)
+inst_no (foreign key from Instrument with the same name)
+cancel_reason (varchar(50))
+cancel_date (data type date)
+manager_no (foreign key from Manager with the same name)
+res_approval (boolean)
+release_date (data type date)
+retrieval_date (data type date)
+
+CREATE TABLE Reservation (res_no VARCHAR(20) PRIMARY KEY NOT NULL, start_date DATE, end_date DATE, res_fee DECIMAL(10, 2) DEFAULT 0, daily_fee DECIMAL(10, 2), total_fee DECIMAL(10, 2), member_no VARCHAR(20) NOT NULL REFERENCES Member(member_no), inst_no VARCHAR(20) NOT NULL REFERENCES Instrument(inst_no), cancel_reason VARCHAR(50), cancel_date DATE, manager_no VARCHAR(20) NOT NULL REFERENCES Manager(manager_no), res_approval BOOLEAN DEFAULT TRUE, release_date DATE, retrieval_date DATE)
+
+
+create for me 5 sample entries for User that can be placed into Member.
+
+INSERT INTO User (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass) VALUES (('U001', 'Member', 'John', 'D.', 'Doe', 'johndoe', 'pass123'),('U002', 'Member', 'Jane', '', 'Smith', 'janesmith', 'abc456'),('U003', 'Member', 'Michael', 'A.', 'Johnson', 'michaelj', 'qwerty'),('U004', 'Member', 'Emily', 'R.', 'Davis', 'emilyd', 'password1'),('U005', 'Member', 'David', '', 'Wilson', 'davidwilson', 'hello123'))
+
+
+INSERT INTO User (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass) VALUES ('M001', 'Member', 'John', 'D.', 'Doe', 'johndoe', 'pass123'), ('M002', 'Member', 'Jane', '', 'Smith', 'janesmith', 'abc456'), ('M003', 'Member', 'Michael', 'A.', 'Johnson', 'michaelj', 'qwerty'), ('M004', 'Member', 'Emily', 'R.', 'Davis', 'emilyd', 'password1'), ('M005', 'Member', 'David', '', 'Wilson', 'davidwilson', 'hello123')
+
+insert into member
+
+INSERT INTO Member (member_no) VALUES ('M001'), ('M002'), ('M003'), ('M004'), ('M005')
+
+make for me 3 entries in User that can be placed into Manager. One of the entries is Jhon D. Doe.
+
+INSERT INTO User (user_no, user_type, user_fname, user_mi, user_lname, user_id, user_pass) VALUES ('R001', 'Manager', 'John', 'D.', 'Doe', 'johndoe', 'pass123'),('R002', 'Manager', 'Robert', 'J.', 'Smith', 'robertsmith', 'abc456'),('R003', 'Manager', 'Emily', 'R.', 'Davis', 'emilydavis', 'qwerty')
+
+INSERT INTO Manager (manager_no) VALUES ('R001'), ('R002'), ('R003')
+
+Create for me 12 entries in Instrument. The possible inst_category can only be Brass, Keyboards, Percussion, Strings, Woodwinds, and Misc.  Make sure each category has 2 entries each. Adjust the inst_value and daily_rate to be in the price range of the Philippine peso.
+
+INSERT INTO Instrument (inst_no, inst_name, inst_category, inst_availability, inst_value, daily_rate) VALUES ('I001', 'Trumpet', 'Brass', 'Available', 5000.00, 300.00), ('I002', 'Trombone', 'Brass', 'Available', 6000.00, 350.00), ('I003', 'Piano', 'Keyboards', 'Available', 80000.00, 1000.00), ('I004', 'Keyboard Synthesizer', 'Keyboards', 'Available', 25000.00, 400.00), ('I005', 'Drum Set', 'Percussion', 'Available', 10000.00, 200.00), ('I006', 'Xylophone', 'Percussion', 'Available', 5000.00, 150.00), ('I007', 'Violin', 'Strings', 'Available', 6000.00, 200.00), ('I008', 'Cello', 'Strings', 'Available', 8000.00, 250.00), ('I009', 'Flute', 'Woodwinds', 'Available', 4000.00, 150.00), ('I010', 'Clarinet', 'Woodwinds', 'Available', 4500.00, 180.00), ('I011', 'Triangle', 'Misc', 'Available', 1000.00, 50.00), ('I012', 'Music Stand', 'Misc', 'Available', 2000.00, 80.00)
+
+Reservation entries
+
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, cancel_reason, cancel_date, manager_no, res_approval, release_date, retrieval_date)VALUES ('R001', '2023-05-17', '2023-05-20', 0.00, (SELECT daily_rate FROM Instrument WHERE inst_no = 'I001') * (DAYS('2023-05-20') - DAYS('2023-05-17')), 0.00, 'U001', 'I001', NULL, NULL, NULL, TRUE, NULL, NULL)
+
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, res_approval)VALUES ('R001', '2023-05-17', '2023-05-20', 0.00, (SELECT daily_rate FROM Instrument WHERE inst_no = 'I001') * (DAYS('2023-05-20') - DAYS('2023-05-17')), 0.00, 'U001', 'I001',  TRUE)
+
+
+Recreating Reservation
+
+Create an associative entity called Reservation. It has the following attributes:
+
+res_no (varchar(20) primary key not null)
+start_date (data type date)
+end_date (data type date)
+res_fee (decimal with 2 decimal places, default value of 0)
+daily_fee (decimal with 2 decimal places)
+total_fee (decimal with 2 decimal places)
+member_no (foreign key from Member with the same name)
+inst_no (foreign key from Instrument with the same name)
+manager_no (varchar(20))
+cancel_reason (varchar(50))
+cancel_date (data type date)
+res_approval (boolean)
+release_date (data type date)
+retrieval_date (data type date)
+
+
+CREATE TABLE Reservation (res_no VARCHAR(20) PRIMARY KEY NOT NULL, start_date DATE, end_date DATE, res_fee DECIMAL(10, 2) DEFAULT 0, daily_fee DECIMAL(10, 2), total_fee DECIMAL(10, 2), member_no VARCHAR(20) REFERENCES Member(member_no), inst_no VARCHAR(20) REFERENCES Instrument(inst_no), manager_no VARCHAR(20), cancel_reason VARCHAR(50), cancel_date DATE, res_approval BOOLEAN, release_date DATE, retrieval_date DATE)
+
+
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, manager_no, cancel_reason, cancel_date, res_approval, release_date, retrieval_date) VALUES ('R001', '2023-05-17', '2023-05-20', 0.00, 25.00, 0.00, 'U001', 'I001', NULL, NULL, NULL, TRUE, NULL, NULL)
+
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, manager_no, cancel_reason, cancel_date, res_approval, release_date, retrieval_date) VALUES ('R001', '2023-05-17', '2023-05-20', 0.00, (SELECT daily_rate FROM Instrument WHERE inst_no = 'I001') * (DAYS('2023-05-20') - DAYS('2023-05-17')), 0.00, 'M001', 'I001', NULL, NULL, NULL, TRUE, NULL, NULL)
+
+UPDATE Reservation SET total_fee = res_fee + daily_fee WHERE res_no = 'R001'
+
+
+-- Entry 2
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, manager_no, cancel_reason, cancel_date, res_approval, release_date, retrieval_date) VALUES ('R002', '2023-06-10', '2023-06-15', 0.00, (SELECT daily_rate FROM Instrument WHERE inst_no = 'I002') * (DAYS('2023-06-15') - DAYS('2023-06-10')), 0.00, 'M002', 'I002', 'R001', NULL, NULL, TRUE, NULL, NULL)
+
+-- Entry 3
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, manager_no, cancel_reason, cancel_date, res_approval, release_date, retrieval_date)VALUES ('R003', '2023-07-05', '2023-07-10', 0.00, (SELECT daily_rate FROM Instrument WHERE inst_no = 'I003') * (DAYS('2023-07-10') - DAYS('2023-07-05')), 0.00, 'M003', 'I003', 'R002', 'No longer needed', '2023-07-01', TRUE, NULL, NULL)
+
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, manager_no, cancel_reason, cancel_date, res_approval, release_date, retrieval_date)VALUES ('R004', '2023-05-15', '2023-05-15', 0.00, (SELECT daily_rate FROM Instrument WHERE inst_no = 'I004') * (DAYS('2023-05-15') - DAYS('2023-05-15')), 0.00, 'M004', 'I004', 'R003', NULL, NULL, TRUE, '2023-05-15',  '2023-05-15')
+
+
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, manager_no, cancel_reason, cancel_date, res_approval, release_date, retrieval_date)VALUES ('R005', '2023-07-10', '2023-07-15', 15.00, (SELECT daily_rate FROM Instrument WHERE inst_no = 'I005') * (DAYS('2023-07-15') - DAYS('2023-07-10')), 0.00, 'M005', 'I005', 'R002', 'Member is Ineligible', '2023-05-16', FALSE, NULL, NULL)
+
+UPDATE User SET user_id = 'manager123', user_pass = 'securepass' WHERE user_no = 'R001'
+
+Sorry for the delay sir, I was making sure all my entries were added into the database I made. Here is our relations. 
+https://docs.google.com/document/d/1FmBjkh0Wv66ssB5T-BewsQKaVgBpBJ8x/edit?usp=sharing&ouid=115725594365704985908&rtpof=true&sd=true
+
+
+Recreating Reservation
+
+Create an associative entity called Reservation in one line. It has the following attributes:
+
+res_no (varchar(20) primary key not null)
+start_date (data type date)
+end_date (data type date)
+res_fee (decimal with 2 decimal places, default value of 0)
+daily_fee (decimal with 2 decimal places)
+total_fee (decimal with 2 decimal places)
+member_no (foreign key from User on the attribute user_no)
+inst_no (foreign key from Instrument with the same name)
+cancelled (boolean default false)
+confirmed (boolean default true)
+closed (boolean default false)
+
+CREATE TABLE Reservation (res_no VARCHAR(20) PRIMARY KEY NOT NULL, start_date DATE, end_date DATE, res_fee DECIMAL(10, 2) DEFAULT 0, daily_fee DECIMAL(10, 2), total_fee DECIMAL(10, 2), member_no VARCHAR(20) REFERENCES User(user_no), inst_no VARCHAR(20) REFERENCES Instrument(inst_no), cancelled BOOLEAN DEFAULT FALSE, confirmed BOOLEAN DEFAULT FALSE, closed BOOLEAN DEFAULT FALSE)
+
+cancellation
+confirmation
+closure
+
+RESERVATION
+
+RES_NO               
+START_DATE 
+END_DATE   
+RES_FEE      
+DAILY_FEE    
+TOTAL_FEE    
+MEMBER_NO            
+INST_NO              
+CANCELLED 
+CONFIRMED 
+CLOSED
+
+Create a table CANCELLATION in one line with the following attributes:
+user_no 
+res_no
+cancel_reason varchar(50)
+cancel_date (data type date)
+
+user_no and res_no are the primary key. user_no references User and res_no references Reservation.
+
+CREATE TABLE CANCELLATION (user_no VARCHAR(20) NOT NULL, res_no VARCHAR(20) NOT NULL, cancel_reason VARCHAR(50), cancel_date DATE, PRIMARY KEY (user_no, res_no), FOREIGN KEY (user_no) REFERENCES User(user_no), FOREIGN KEY (res_no) REFERENCES Reservation(res_no))
+
+Create a table CONFIRMATION in one line with the following attributes:
+
+user_no
+res_no
+release date (data type date)
+
+user_no and res_no are the primary key. user_no references User and res_no references Reservation.
+
+CREATE TABLE CONFIRMATION (user_no VARCHAR(20) NOT NULL, res_no VARCHAR(20) NOT NULL, release_date DATE, PRIMARY KEY (user_no, res_no), FOREIGN KEY (user_no) REFERENCES User(user_no), FOREIGN KEY (res_no) REFERENCES Reservation(res_no))
+
+Create a table CLOSURE in one line with the following attributes:
+
+CLOSURE
+user_no
+res_no
+closure_date
+
+user_no and res_no are the primary key. user_no references User and res_no references Reservation.
+
+CREATE TABLE CLOSURE (user_no VARCHAR(20) NOT NULL, res_no VARCHAR(20) NOT NULL, closure_date DATE, PRIMARY KEY (user_no, res_no), FOREIGN KEY (user_no) REFERENCES User(user_no), FOREIGN KEY (res_no) REFERENCES Reservation(res_no))
+
+Add these entry to Reservation
+
+R001                	05/17/2023	05/20/2023	15.00	1200.00	0.00	1                	1               	0	0	0
+
+R002                 	06/10/2023	06/15/2023	15.00	2100.00	0.00	2                 	2                 	0	0	0
+R003                	07/05/2023	07/10/2023	15.00	6000.00	0.00	3                 	3                 	1	0	0															
+R004                 	05/15/2023	05/15/2023	0.00	400.00	0.00	4                 	4                 	0	1	1															
+R005                	07/10/2023	07/15/2023	15.00	12000.00	0.00	5                 	5                 	1	0	0															
+INSERT INTO Reservation (res_no, start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, cancelled, confirmed, closed) VALUES ('R002', '2023-06-10', '2023-06-15', 15.00, 2100.00, 0.00, 'M002', 'I002', 0, 0, 0),('R003', '2023-07-05', '2023-07-10', 15.00, 6000.00, 0.00, 'M003', 'I003', 1, 0, 0),('R004', '2023-05-15', '2023-05-15', 0.00, 400.00, 0.00, 'M004', 'I004', 0, 1, 1),('R005', '2023-07-10', '2023-07-15', 15.00, 12000.00, 0.00, 'M005', 'I005', 1, 0, 0)
+
+Create an entry into Cancellation with the following data
+
+M003                 	R003                 	No longer needed	05/15/2023
+
+INSERT INTO CANCELLATION (user_no, res_no, cancel_reason, cancel_date) VALUES ('M003', 'R003', 'No longer needed', '2023-05-15')
+
+N002	R005	Member ineligible 	05/15/2023
+
+INSERT INTO CANCELLATION (user_no, res_no, cancel_reason, cancel_date) VALUES ('N002', 'R005', 'Member ineligible', '2023-05-15')
+
+create an entry into Confirmation with the following data: M004                 	R004                 	05/15/2023
+
+INSERT INTO CONFIRMATION (user_no, res_no, release_date)VALUES ('M004', 'R004', '2023-05-15')
+
+INSERT INTO CLOSURE (user_no, res_no, closure_date)VALUES ('M004', 'R004', '2023-05-15')
+
+I've finished the adjustments sir. 
+
+Business rules:
+
+Rule 4: the relationship 'ends' is now 'closes'.
+
+ERD:
+
+Changed the relationship 'ends' to be 'closes'.
+Added attributes to Reservation: cancelled, confirmed, closed. The attribute res_approval has been removed.
+
+Relations:
+
+Added the new tables Cancellation, Confirmation, and Closure. The relevant attributes from Reservation has been moved into the new tables. 
+
+https://docs.google.com/document/d/1FmBjkh0Wv66ssB5T-BewsQKaVgBpBJ8x/edit

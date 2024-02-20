@@ -1,0 +1,5 @@
+Step 1: Removing Invalid Data
+In cleaning the data, we removed the entries wherein we deemed the number of hours to be unrealistic. For example a respondent answered 8000 hours, and others 150, 140, 120 hours. Eventually we decided on 100 hours to be the maximum, as there were 17 respondents who answered that they play for 100 hours every week. We also removed the entries in which the number of hours were Not Available.
+
+Step 2: Data Transformation
+We transformed our data to become categorical for easier application in Weka. The number

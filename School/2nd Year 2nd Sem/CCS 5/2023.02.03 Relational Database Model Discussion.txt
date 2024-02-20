@@ -1,0 +1,232 @@
+Relational Database Model
+2023.02.03
+
+Logical View of the data
+
+
+relation is a synonym for table
+
+a table is a persistent(fixed) representation of a logical relation
+
+*characterostocs of a Relational Table
+-table row - tuple
+-columns - attributes
+-rows - data
+-all attributes should be in one row
+-cell can contain more than one data, but the BDMS will treat it as one
+thats why each cell represents a single data value
+-same data format for all values in a column
+-specific range of values is known as the attribute domain
+the order of the rows and columns is immaterial to the DBMS
+-each table must have an attribute or a combination of attributes that uniquely identifies each row, like Student ID
+
+KEYS
+-important to ensure that each row in a table is uniquely identifiable
+-cannot be redundant
+-not use common attributes like name or degree or address
+-used to establish relationships among tables
+
+
+shorthand notation for "A determines B" os A -> B
+"EMP_ID determines EMP_LASTNAME"; EMP_ID -> EMP_LASTNAME"
+"EMP_ID determines EMP_LASNAME, EMP_FIRSTNAME, EMP_DEGREE" is written as EMP_ID -> EMP_LASTNAME, EMP_FIRSTNAME, EMP_DEGREE"
+
+Functional dependence: Attributes B is functionally dependent on attribute A if each value in column A determines one and only one value in column B
+
+CustId -> CustName, CustAddress
+CustName, CustAddress are functionally dependent on CustAddress
+CustAddress -> CustId, CustName
+CustID , CustName are not functionally dependent on CustAddress
+
+COMPOSITE KEY - two or more attributes used to define functional dependence
+ex: EMP_LASTNAME, EMP_FIRSTNAME, EMP_MIDDLE -> EMP_DEGREE, EMP_POSITION
+-Key attribute is any attribute that is part of a key
+
+Full functional dependence: If the attribute (B) is functionally dependent on a composite key (A) but not on any subset of the composite key, (B) is fully functionally dpenedent on (A)
+Ex: 
+EMP-LNAME, EMP-FNAME, EMP-MID -> EMP-DEGREE, EMP-POS
+	EMP-LNAME -X> EMP-DEGREE, EMP-POS
+	not functionally dependent on any subset of the composite key
+	EMP-DEGREE, EMP-POS are fully functionally dependent on EMP-LNAME, EMP-FNAME, EMP,-MID
+
+EMP-ID, EMP-LNAME -> EMP-DEGREE, EMP-POS
+	EMP-ID -> EMP-DEGREE, EMP-POS
+	EMP-DEGREE, EMP-POS are functionally dependent on EMP-ID which is a subset of the composite key
+	They are not fully functionally dependent on the composite  key
+
+SUPERKEY is any key that uniquely identifies each row 
+-it functionally determines all of a row's attributes
+-can be single or composite
+
+CANDIDATE KEY is a superkey without unnecessary attributes
+EMP-ID candidate key
+EMP-ID, EMP-LNAME not candidate key
+EMP-LNAME, EMP-FNAME, EMP-MI candidate key
+
+
+PRIMARY KEY is the candidate key chosen to be the unique row row identifier
+-also a candidate key and a superkey
+-the choice of a primary key would be driven by the designers choice or by the end-user requirements
+-must be unique (entity integrity)
+-must not be allowed to contain a null value 
+null could mean:
+	an unknown attribute value
+	a known, but missing value
+	a "not applicable" condition
+
+
+A relational database can also be represented by a relational schema
+Relational schema is a textual representation of the database tables where
+-each table is listed by its name followed by its attributes enclosed in parenthesis
+-the primary key(s) are underlined
+Ex:
+ITEM(~ITEM_NUM~, ITEM_NAME, ITEM_PRICE, ITEM_QTY)
+STUDENT(~ST_ID~, ST_LNAME, ST_FNAME, ST_MI, ST_DEGREE)
+
+FOREIGN KEY (FK) is an attribute whose value match the primary key values in the related value
+Underline the foreign key attribute with a broken line
+primary keys are still underlined 
+
+
+referential integrity exist when the foreign key contains a value that refers to an existing valid tuple in another relation
+SECONDARY KEY is defined as a key that is used strictly for data retrieval purposes
+
+****INTEGRITY RULES
+
+all modern DBMS automatically implement integrity rules
+good design practice to have your application design conforms to the entity and referential integrity rules
+
+ENTITY INTEGRITY
+Requirement
+- all primary keys are unique and no part of a primary may be null
+Purpose 
+- each row will have a uniwue identity, and foreign key values can properly reference primary key values
+Example 
+- No invoice can have a duplicate number, nor can it be null.
+- all invoices are uniquely identified by their invoice number
+
+REFERENTIAL INTEGRITY
+Requirement
+- a foreign key may have either a null entry, as long as it is not part of its table's primary key, or an entry that matches the primary key value in a table to which it is related
+- every non-null foreign key value must reference an existing primary key value
+
+DATA DICTIONARY AND THE SYSTEM CATALOG
+Data dictionary provides a detailed description of all tables found within the user/design-created database
+hold the data and the metadata
+
+the SYSTEM CATALOG can be described as a detailed system data dictionary that describes al objects within the database, including:
+
+data about table names
+table's creator and creation date
+the number of columns in each table
+the data type corresponding to each column
+index filenames
+index creators
+authrized users
+access priveleges
+
+The systems catalog automatically produces the database documentation
+this documentation is used to check and eliminate homonyms and synonyms as nwew tables are created
+
+homonyms indicates the use of the same attribute name to label different attributes
+synonym indicates the user of different names to describe the same attributes
+both must be avoided
+
+RELATIONSHIPS WITHIN THE RELATIONAL DATABASE
+
+One to Many
+One to One
+Many to Many
+-difficult to implement
+-to avoid many to many relationships, create a composite entity (bridge or associative)
+-the composite entity's foreign key at the very least should include the primary keys of the table to be link
+-it may include other attributes
+
+Ex:
+One student enrolles one or more courses
+One course is enrolled in by one or more students
+
+[STUDENT(~STUD_ID~, NAME)]>|- <enrolls(semester, grade, ~transaction number~)> -|<[COURSE(~COURSE_CODE~, COURSE_TITLE, CREDITS)]
+
+one or more to one or more
+(many) 		(many)
+
+||- represents one
+0|- one or zero
+|<- one to many
+0<- zero or many
+
+E1 ||- <> -0< E2
+E1 ||- <> |< E2
+one to many
+
+E1 ||- <> -|| E2
+one to one
+
+*Associative entity or composite entity, to remove many to many
+
+
+[STUDENT]-||---|<-[<enrollment>]->|---||-[COURSE]
+
+same attributes
+enrolls is replaced with a noun, which is enrollment since it is now an entity
+
+enrollment(~trans_No~, grade, sem)
+should have the primary keys of the tables as foreign keys
+
+Codd's Relational Database Rules
+
+1. Information
+- All information in a relational database must be logically represented as acolumn values in rows within tables
+2. Guaranteed Access
+- Every value in a table is guaranteed to be accessible through a combination of table name, primary key values, and volumn name
+3. Systematic Treatment Nulls
+- Nulls must be reoresented and treated in a systematic way, independent of data type
+4. Dynamic On-Line Catalog Based on the Relational Model
+- The metadata must be stored and managed as ordinary data, that is, in tables within the database
+- Such data must be available to authorized users using the standard database relational language
+5. Comprehensive Data Sublanguage
+- The relational database may support many languages
+- However, it must support one well defined. declarative language with support for data definition, view definition, data manipulation (interactive and by program), integrity constraints, authorization, and transaction management )begin, commit, and rollback)
+6. View Updating
+- Any view that is theoretically updatable must be updatable through the system
+
+primary keys and foreign keys, important data, should not be null
+maybe middle name would be optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

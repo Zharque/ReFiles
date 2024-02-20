@@ -1,0 +1,92 @@
+Assignment
+1. L = { w ∈ {a,b}* / w contains aa or bb}
+	L( (a+b)*(aa+bb)(a+b)* )
+2. L = { w ∈ {a,b}* / w contains the substring aba}
+	L( (a+b)*aba(a+b)* )
+3. L = { w ∈ {a,b}* / w starts and ends in b}
+	L( b(a+b)*b)
+4. L = { w ∈ {a,b}* / |w|=2k where k=0,1,2,3,...}
+	L( ((a+b)(a+b))* )
+5. L = { w ∈ {a,b}* / w ends in ab}
+	L( (a+b)*ab )
+6. L = { w ∈ {a,b}* / w contains at most 1 b}
+	L( a*ba* )
+7. L = { w ∈ {a,b}* / w contains the substring aa}
+	L( (a+b)*aa(a+b)* )
+8. L = { w ∈ {a,b}* / w contains 0 or more clumps of aba's}
+	L( (aba)* )
+9. L = { w ∈ {a,b}* / second symbol in w is an a}
+	L( (a+b)a(a+b)* )
+10. L = { w ∈ {a,b}* / |w| = 3k+1 where k=0,1,2,3,...}
+	L( ((a+b)(a+b)(a+b))*(a+b) )
+11. L = { w ∈ {a,b}* / w contains all a's or all b's}
+	L( ( (a+b) )* )
+	L( a*+b* )
+
+
+L( ( (a+b) )* )
+	L( a*+b* )
+
+
+
+
+second symbol in w is an a}
+
+ L(  (a+b)a(a+b)* )
+
+
+
+|w| = 3k+1 where k=0,1,2,3,...}
+
+
+L( ((a+b)(a+b)(a+b))*(a+b))
+
+
+aaa
+aab
+
+aba
+abb
+baa
+bbb
+
+w contains all a's or all b's}
+
+
+(a)*+(b)*
+
+
+a*+b*
+
+
+
+((a+b)(a+b))*
+(aa, ab, ba, bb)*
+
+b(ab)*
+b,
+bab,
+babab,
+bababab,
+
+b(a+b)*
+
+b
+b1
+	ba
+	bb
+b12
+	baa
+	bab
+	bba
+	bbb
+b123
+	baaa
+	baab
+	baba
+	babb
+	bbaa
+	bbab
+	bbba
+	bbbb
+b1234

@@ -1,0 +1,10 @@
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\bin\Debug\CCS5 Percussions.exe.config
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\bin\Debug\CCS5 Percussions.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\bin\Debug\CCS5 Percussions.pdb
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\bin\Debug\CCS5 Percussions.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\obj\Debug\CCS5 Percussions.vbproj.GenerateResource.Cache
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\obj\Debug\CCS5 Percussions.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\obj\Debug\CCS5 Percussions.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Percussions\CCS5 Percussions\obj\Debug\CCS5 Percussions.pdb

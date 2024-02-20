@@ -1,0 +1,17 @@
+HOW TO FIX TOOLBOX
+
+https://thinkaboutit.be/2012/10/my-toolbox-is-empty/
+
+C:\Users\rynde\AppData\Local\Microsoft\VisualStudio\11.0
+
+
+Public Structure inst_rented
+        Public i_name As String
+        Public i_num As String
+        Public start_date As Date
+        Public end_date As Date
+        Public i_value As Decimal
+        Public i_rate As Decimal
+        Public i_res As Decimal
+        Public total_fee As Decimal
+    End Structure

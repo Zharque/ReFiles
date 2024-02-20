@@ -1,0 +1,2 @@
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Rental Process\CCS5 Rental Process\bin\Debug\CCS5 Rental Process.exe.config
+D:\Re\School\2nd Year 2nd Sem\CCS 5\FINAL PROJECT\VBNET\FINAL\CCS5 Rental Process\bin\Debug\CCS5 Rental Process.exe.config

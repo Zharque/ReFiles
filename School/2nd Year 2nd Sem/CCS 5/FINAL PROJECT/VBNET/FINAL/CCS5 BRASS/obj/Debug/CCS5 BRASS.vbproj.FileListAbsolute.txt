@@ -1,0 +1,10 @@
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\bin\Debug\CCS5 BRASS.exe.config
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\bin\Debug\CCS5 BRASS.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\bin\Debug\CCS5 BRASS.pdb
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\bin\Debug\CCS5 BRASS.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\obj\Debug\CCS5 BRASS.vbproj.GenerateResource.Cache
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\obj\Debug\CCS5 BRASS.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\obj\Debug\CCS5 BRASS.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Brass\CCS5 BRASS\obj\Debug\CCS5 BRASS.pdb

@@ -1,0 +1,12 @@
+{
+	"name": "Kyle",
+	"age": 17,
+	"married": false,
+	"hobies": ["fishing", cooking"],
+	"friends": [{
+		"name": "Martin",
+		"age": 17,
+		"married": false,
+		"hobies": ["fishing", cooking"],
+	}]
+}

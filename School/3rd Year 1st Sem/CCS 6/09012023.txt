@@ -1,0 +1,197 @@
+09/01/2023
+CCS 6
+
+Introduction to Systems
+
+System (definitions)
+-a regularly interacting group of elements forming a unified whole
+-a collection of related parts treated as a unit where its components interact
+-a group of related procedures for a particular business function such as inventory or payroll
+-a group of interrelated procedures used for a business function, with an identifiable boundary, working together for some purpose
+
+Information System
+-a collection of people, procedures, programs, equipment and methods that process data and make it available
+
+------------------
+PARTS OF A SYSTEM
+
+The Environment
+-The people, facilities, rules, policies, and regulations that surround a system
+-Systems exist in relation to other systems and to the outside world
+
+Libary System
+==============
+Books, Librarians, Borrowers, Library rules and regulations
+
+Boundery
+-The perimeter, or line of demarcation between a system and the environment
+
+Inputs
+-Items that enter the bounderies of the system from the environment and are manipulated
+
+Processing
+-The conversion of inputs, or raw materials, to outputs, or finished results
+
+Outputs
+-The product of processing
+-can be hardcopy or softcopy
+
+Model of a Simple System
+
+Input|Data -> Process -> Output|Information -> User/Observer -> Input|Data -> .....
+
+----------------------
+COMPONENTS OF AN INFORMATION SYSTEM
+
+Data ->
+==
+Software Hardware People Procedures Data
+== Processing ->
+Information
+
+Hardware
+
+Software
+-system software
+-application software
+-in-house applications, software packages, legacy systems
+
+Data
+-consists of basic facts that are the system's raw material
+
+Procedures
+-defined tasts that must be performed by people
+
+People
+-users
+-skilled processionals 
+
+-----
+Integrating Technologies for Systems(1)
+
+E-commerce Applications and Web Systems
+
+Enterprise Resource Planning Systems
+
+Systems for Wireless and Mobile Devices
+
+Open Source Software
+
+-------
+OTHER SYSTEM CONCEPTS
+
+Decomposition
+-The process of breaking down a system into its smaller components
+
+Modularity
+-the direct result of decomposition
+-dividing a system into chunks or modules of a relatively uniform size
+-modules can represent a system simply
+-helps the designer to compartmentalize the design into functional compartments
+
+Coupling
+-means the extent to which subsystems depend on each other
+-subsystems should be as independent as possible
+-if one subsystem fails and other subsystems are highly dependent on it, the others will either fail themselves or have problems functioning
+-when designing, you must strive for low coupling (dependency between modules should be less)
+
+Cohesion
+-the extent to which a system or subsystem performs a single function
+-when designing, you must strive for high cohesion (a cohesive module focuses on a single task with little interaction with other modules)
+
+--------------
+Systems that the systems analyst recommends, designs and maintains for users
+
+Types of Systems
+Strategic Level <
+Management (Higher) Level <
+Knowledge Level <
+Operational level
+
+Operational Level
+-Transaction Processing System
+
+Knowledge Level
+-Office Automation Systems
+-Knowledge Work Systems
+
+Mangement Level
+-Mangement Information Systems
+-Artificial Intelligence and Expert Systems
+
+Strategic Level
+-Executive Support Systems
+-Group Decision Support Systems
+
+----
+The Systems Development Life Cycle (SDLC)
+
+1. Identifying problems, opportunities, and objectives
+2. Determining human information requirements
+3. Analyzing system needs
+4. Designing the recommended system
+5. Developing and documenting software
+6. Testing and maintaining the system
+7. Implementing and evaluating the system
+
+Phase 1:
+Identifying problems, opportunities and objectives
+Activities:
+-interviewing user management
+-summarizing the knowledge obtained
+-estimating the scope of the project
+-documenting the results
+Output/Milestone:
+-feasibility report containing problem definition and obective summaries from which management can make a decision on whether or not to proceed with the proposed project
+
+Phase 2:
+Determining human information requirements 
+Activities:
+-Interviewing
+-Sampling and investing hard data
+-Questionnaires
+-Observe the decision maker's behavior and environment
+-Prototyping
+-Learn the who, what, where, when, how, and why of the current system
+
+Phase 3:
+Activities
+-Create data flow diagrams (DFD)
+-complete the data dictionary
+Output:
+-reccomendation
+
+Phase 4:
+Designing the reccomended system
+Activites:
+-design procedures for data entry
+-design the human-computer interface
+output
+-model of the actual system
+
+Phase 5:
+
+Phase 6:
+Testing and maintaining the system
+
+Phase 7:
+Implementing and evaluating the System
+
+--
+The Impact of Maintenance
+-Some reasearchers estiamte that the amount of time spent on system maintenance may be as much as 60% of the total time spent on systems projects
+-removing software errors
+-enhancing existing software
+
+
+
+
+
+
+
+
+
+
+
+
+

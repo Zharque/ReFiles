@@ -1,0 +1,10 @@
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\bin\Debug\CCS5 Guidelines.exe.config
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\bin\Debug\CCS5 Guidelines.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\bin\Debug\CCS5 Guidelines.pdb
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\bin\Debug\CCS5 Guidelines.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\obj\Debug\CCS5 Guidelines.vbproj.GenerateResource.Cache
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\obj\Debug\CCS5 Guidelines.exe
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\obj\Debug\CCS5 Guidelines.xml
+C:\Users\dher\Documents\Visual Studio 2012\Projects\CCS5 Guidelines\CCS5 Guidelines\obj\Debug\CCS5 Guidelines.pdb

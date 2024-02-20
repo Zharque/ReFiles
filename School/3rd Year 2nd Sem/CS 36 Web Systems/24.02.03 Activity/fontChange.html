@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Change</title>
+</head>
+<body>
+    <button type="button" onclick="myFunction()">Click Me!</button>
+    <p id="demo">JavaScript can change the style of an HTML element.</p>
+
+    <script>
+        function myFunction(){
+            var x = document.getElementById("demo");
+            var randomFontSize = Math.floor(Math.random() * 21) + 10;
+            x.style.fontSize = randomFontSize + "px";
+
+            var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            x.style.color = randomColor;
+        }
+    </script>
+
+    
+</body>
+</html>

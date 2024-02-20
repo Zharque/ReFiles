@@ -1,0 +1,51 @@
+h2024.01.29 CS 32 Orientation
+Programming Languages
+
+Research on specific languages
+1st half - Lectures (textbooks)
+2nd half - Reporting
+
+Description
+
+This course discusses the comparison of structures between prgoramming languages. Topics include: history of software and the machines that were used to run these software, a review of data structures, control structures and program structures, and classification of programming languages.
+
+Learning Outcomes
+
+At the end of this course, the student will have:
+-reason about memory leaks, dangling-pointer dereferences, and the benefits and liminations of garbage collection  through an understanding of programming language implementation and how memory is organized
+-evaluate the appropriateness of the use of a progamming language for implementing a particular application based on language features
+
+Topics 
+-Programming preliminaries
+-Syntax and Semantics
+-Names, Bindings, and Scopes
+-Data types
+-Expressions and the assignment statement
+-Control structures
+-Subprograms
+
+Grading System
+Assignments/Seatworks : 10%
+Project/Report: 20%
+Quiz: 30%
+Major Quiz: 40%
+Final = Midterm 40% + Post-midterm 60%
+
+References
+Sebesta, Robert W., Concepts of Programming Languages (to be provided)
+
+Group 7 Smalltalk:
+James Teves
+Rynz Daval
+
+To be submitted midterm week
+Reporting 15 to 20 minutes, 2 reporters each meeting
+
+
+
+
+
+
+
+
+

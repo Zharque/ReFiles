@@ -1,0 +1,59 @@
+1. 	Create an account 
+	(username and password)
+	account type: Administrator
+2.	Reboot the computer & log-on using the account you have created.
+3.	Download the DB2 installer from Google Drive
+4.	Install DB2
+5.	Create a database 
+	file name: CCS5A
+6.	Create the ff tables:
+
+	table name: EMPLOYEE
+	Columns:
+	1) EmpNo char(4) - required, primary key
+	2) EmpLName varchar(20) - required
+	3) EmpFName varchar(30) - required
+	4) EmpMName varchar(20) - optional
+	5) EmpSalary decimal(9,2) - required, default 0.0
+
+	table name: CHILD_DEP
+	Columns:
+	1) DepNo char(5) - required, primary key
+	2) DepLName varchar(20) - required
+	3) DepFName varchar(30) - required
+	4) DepMName varchar(20) - optional
+	5) EmpNo char(4) - required, foreign key, on update no action, on delete cascade
+
+
+the variables, the definition, the constraint
+
+
+	table name: EMPLOYEE
+	Columns:
+	1) EmpNo char(4) - required, primary key
+	2) EmpLName varchar(20) - required
+	3) EmpFName varchar(30) - required
+	4) EmpMName varchar(20) - optional
+	5) EmpSalary decimal(9,2) - required, default 0.0
+
+CREATE TABLE EMPLOYEE (EmpNo char(4) NOT NULL PRIMARY KEY, EmpLName varchar(20) NOT NULL, EmpFName varchar(30) NOT NULL, EmpMName varchar(20), EmpSalary decimal(9,2) DEFAULT 0.0)
+
+
+	table name: CHILD_DEP
+	Columns:
+	1) DepNo char(5) - required, primary key
+	2) DepLName varchar(20) - required
+	3) DepFName varchar(30) - required
+	4) DepMName varchar(20) - optional
+	5) EmpNo char(4) - required, foreign key, on update no action, on delete cascade
+
+
+CREATE TABLE CHILD_DEP (DepNo char(5) NOT NULL PRIMARY KEY, DepLName varchar(20) NOT NULL, DepFName varchar(30) NOT NULL, DepMName varchar(20)
+
+ alter table daval.child_dep add column EmpNo char(4) NOT NULL FOREIGN KEY ON UPDATE NO ACTION ON DELETE CASCADE
+
+select empfname from employee
+
+insert into employee values ('A001', 'Daval', 'Rynz', 'A', 1500)
+
+select empfname, emplname, empmname, empsalary from employee

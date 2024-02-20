@@ -1,0 +1,13 @@
+total number of responses - 1 / total number of responses
+
+interval
+
+example:
+
+5-1/5 = 0.8
+
+1-1.8 = Poor
+1.81-2.6 = Fair
+2.61-3.4 = Good
+3.41-4.2 = Very Good
+4.21-5 = Excellent

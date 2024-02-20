@@ -1,0 +1,108 @@
+Introduction to Structured Query Language (SQL)
+
+Data Definition Language (DDL) - create database objects such as tables, indexes, and views
+Data Manipulation Language (DML) - insert, update, delete, and retrieve(select) data within the database tables
+Data Control Language (DCL) - 
+
+Data Definition Commands
+
+Creating the Database
+CREATE DATABASE <database name>;
+
+Connecting to a Database
+connect to <database name> [user <username> using <password>]
+
+The Database Schema
+-group of database objects that are related to each other
+ANSI SQL Syntax:
+CREATE SCHEMA AUTHORIZATION <creator name>;
+DB2 Syntax:
+CREATE SCHEMA <schema name> 
+ex: create schema acctg
+	create table acctg.table1(id int not null primary key, name varchar(20))
+AUTHORIZATION <authorization name> 
+<schema name> AUTHORIZATION <authorization name>
+
+Ways ti create a schema
+1) Explicit 
+2) Implicit (automatic creation)
+
+Create Table Structures
+Syntax:
+CREATE TABLE <[schema name].table name> (
+column1 data type [constraint] [,
+column2 data type [constraint] [,
+PRIMARY KEY (column1 [, column2]) [,
+FOREIGN KEY (column1 [, column2]) REFERENCES tablename] [,
+CONSTRAINT constraint]);
+
+SQL CONSTRAINTS
+
+PRIMARY KEY
+PRIMARY KEY (column1 [, column2])
+	PRIMARY KEY (itemno)
+
+NOT NULL
+<column name> NOT NULL
+	LastName varchar(20) NOTNULL
+-for all columns required
+
+FOREIGN KEY
+	FOREIGN KEY (column name) REFERENCES <table name> ON [<update/delete> <action taken>]
+Example:
+On delete cascade:
+	Delete from Item where itemNo = 100
+On delete restrict (or No action):
+On delete set NULL:
+	create table table5 (DepNo int not null primary, name varchar(30), EmpNo iny Foreign key(EmpNo) references to employee on delete set null)
+
+UNIQUE
+-makes sure no duplicate, used with NOT NULL
+<column name> <data type> UNIQUE
+	Custlname varchar(20) NOT NULL UNIQUE
+CONSTRAINT <index name> UNIQUE (column name, ...)
+	CONSTRAINT pid UNIQUE (id, custlastname)
+UNIQUE (column name, ...)
+	UNIQUE (custlastname, custfirstname)
+
+create table customer(custId int not null primary key, custLname varchar(20) unique, custfname varchar(30))
+
+DEFAUL-assigns a value to an attribute when a new row is added to a table
+	<column name> <data type> DEFAULT <default value>
+	Area_code char(4) DEFAULT '6200'
+
+create table customer(custid int not null primary key, custLname varchar(20), custfname varchar(30), balance decimal (9, 2) default 0.0)
+
+cname char(10)
+vname varchar(10)
+similarities:
+	maximum of 10 characters
+	strings
+differences:
+	the length of varchar is variable
+	vname = 'Juan' //size is 4
+	cname = 'Juan'
+	search for Juan, not found
+ 	cname = 'Juan          '
+	automatically added spaces
+
+CHECK
+-used to validate data when an attribute value is entered
+<column name> <data type> CHECK (<condition>)
+CONSTRAINT <check name> CHECK(<condition>)
+	Area_code char(4) CHECK (area_code in ('6200, '6230')
+	Area_code char(4) DEFAULT '6200' CHECK (area_code in ('6200','6230'))
+	CONSTRAINT code_ck1 CHECK (area_code in ('6200','6230'))
+area_code = '6200' or area_code = '6230'
+
+Indexes
+-special lookup tables
+	CREATE [UNIQUE] INDEX indexname ON tablename(column1[, column2])
+	CREATE UNIQUE itemidx on items(itemid)
+
+--------------
+
+Use this to open DB2:
+DB2 command window - administrator
+
+>db2 create database ccs5b

@@ -1,0 +1,31 @@
+2024.01.30 Introduction CS 38 Software Engineering 1
+
+Why Software Engineering is Essential
+- We can't run the modern world without software.
+
+Software systems are abstract and intangible
+- They are not constrained.
+
+However, software systems can quickly become extremely complex, difficult to understand, and expensive to change.
+
+Not all softwares need the same software engineering techniques
+
+Software is not just another word for computer program
+
+
+Software Products
+- Generic products
+- Customized (or bespoke) products
+
+Attributes of a good software
+
+Maintainability
+Dependability and security
+Efficiency
+Acceptability
+
+What is software engineering?
+- concerned with all aspects of software production from the early stages of system specification through to maintaining the system after it has gone into use.
+
+The systemaic approach that is used in software engineering is sometimes called a software process.
+

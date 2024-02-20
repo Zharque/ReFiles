@@ -1,0 +1,112 @@
+The Enhanced E-R Model
+
+-Enhanced entity relationship (EER) model is used to identify the model that has resulted from extending the original E-R model with these new modeling construct.
+-The most important modeling construct incorporated in the EER model is supertype/subtype relationships.
+--This enables us to model a genral entity type (called the supertype) and then subdivide it into several specialized entity types (called the subtypes)
+-Consider this: "An employee advises many students."
+
+One employee advises one or more students.
+One student is advised by one employee.
+
+     +->|-<files a leave>-0<-[LEAVE_TYPE]
+	|
+[EMPLOYEE]		  <advises>-|<-[STUDENT]
+      |				 |
+   +-(d)-->-[FACULTY]-||-+
+   |
+   +->-[STAFF]
+
+Representing Supertypes and Subtypes
+Parent-Child Relationship
+
+-A SUBTYPE is a subgrouping of the entities in an entity type that is meaningful to the organization.
+-A supertype is a generic entity type that has a relationship with one or more subtypes.
+*The supertype is connected with a line to a circle, which in turn is connected with a line to each subtype that has been defined.
+*The U-shaped symbol on each line connecting a subtype to the circle emphasizes that the subtype is a subset of the supertype.
+*It also ndicates the direction of the subtype/supertype relationship.
+*Attributes that are shared by all entities (including the indentifier) are associated with the supertype.
+*Attributes that are unique to a particular subtype are associated with that subtype.
+*The same is true for relationships.
+
+Attribute Inheritance
+*A subtype is an entity type in its own right.
+*An entity instance of a subtype represents the same entity instance of the supertype.
+*Attribute inheritance is the property by which subtype entities inherit values of all atrributes and instancee of all relationship of the supertype.
+When to use supertype/subtype relationships
+*There are attributes that apply to some but not all instances of an entity type.
+*The istances of a subtype participate in a relationship-
+
+Specialization and Generalization
+*In data modeling, generalization is the process of defining a more general entity type from a set of more specialized entity types.
+-a bottom-up process
+*Specialization is a top-down process, the direct reverse of generalization.
+*both are valuable techniques for developing supertype/subtype relationship.
+*Which to use? -depends the nature of the problem domain, previous modeling efforts, and personal preference.
+
+Specifying Constrains In Supertype/Subtype Relationships
+
+Completeness Constrants
+*Addresses the question of whether an instance of a supertype must also be a member of at least one subtype.
+*Has two rules:
+-Total specialization - specifies that each entity instance of the supertype must be a member of some subtype in the relationship.
+-Partial specialization - specifies that an entity instance of the supertype is allowed not to belong to any subtype.
+
+[PATIENT]
+   ||
+   0
+Total Specialization has two lines. 
+
+[VEHICLE]
+    |
+    0
+Partial Specialization has one line.
+
+Disjointness Constraints
+-Addresses whether an instance of a supertype may simultaneously be a member of two or more subtypes.
+
+Two Rules:
+-Disjoint rule - if an entity instance of the supertype is a member of one subtype, it cannot simultaneously be a member of any other subtype.
+-Overlap rule- entity can simultaneously be a member of two or more subtypes.
+
+[PATIENT]
+    |
+   (d)
+Disjoint rule has a letter d inside the circle.
+
+[PART]
+  ||
+ (o)
+0verlap rule has a letter o inside the circle.
+
+Subtype Discriminators
+-A subtype discriminator is an attribute of a supertype whose values determine the target subtype or subtypes
+
+Supertype/subtype Hierarcy
+-subtypes can have subtypes
+
+Entity Clustering
+-It is a useful way to present a data model for a large and complex organization.
+Entity cluster is a set of one or more entity types and associated relationships grouped into a single abstract entity type.
+-Entity clustering is a hierarchical decompisition of a macro-level view of the data model into a finer and finer views, eventually resulting into the full, detailed ata model.
+
+----
+
+Transforming ERD into Relationships
+
+Step 1: Representing Entities
+-Formally, for each entity type E in the ERD, create a relation R that includes all the attributes of E.
+-This means, you need to 
+*Create a 2-dimensional table whose number of columns is equal to the number of attributes in your ERD
+*Give the table the name, written in capital letters, that you gave the entity in the ERD
+*Include all the names of the attributes in the table that you created
+-If you remember one of the properties of a relation, the order of the attributes is not important
+
+Add enough examples to illustrate the cardinality
+-if one to many, add the same foreign key multiple times
+-if one to one, the table becomes one, the primary key of the other entity will become a normal attribute
+
+Merging two entity types and the relationship into a single relation is only appropriate when the participation of the entity types are total and the entity types do not participate in any other relationship.
+
+-if merging is not permissible, add the primary of A as a foreign key of B 
+-you can rename foreign key
+

@@ -1,0 +1,7 @@
+Ang kulang is to either make new forms for the manager, or change the labels on the current forms to be relevant for the manager. 
+
+Approval/Cancellation:
+In the Current Rent form, instead nga Cancel nga button, it should instead be 'Edit' or something else. It will lead to a different form where the manager can see the details of that particular reservation, and they can Approve or Cancel that reservation. Aprrove is just setting the CONFIRMED value for that entry in the RESERVATION table to be true. Cancel only needs to be connected to the current cancelation form. 
+
+Closure:
+I am not yet sure about this one, maybe will change the Rent History so that it will only display the entries that were approved, and the manager will be able to change the CLOSED value to be true by clicking on the button.

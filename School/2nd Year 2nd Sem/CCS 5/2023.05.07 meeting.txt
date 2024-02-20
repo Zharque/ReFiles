@@ -1,0 +1,21 @@
+Error when referencing IBM
+Window size when opening
+
+1366, 768
+
+Buttons
+If available, rent
+If not, reserve
+
+ERRORS:
+If start date less than current date
+If end date is less than start date
+
+Combine into one project
+
+8
+9
+10
+11
+12
+

@@ -1,0 +1,271 @@
+Imports IBM.Data.DB2
+
+Module DatabaseModule
+    Dim connectionString As String = "Server=localhost;Database=ccs5bers;UID=db2admin;PWD=db2admin;" 'change to local account
+    Dim connection As DB2Connection
+    Public loggedInUsername As String = "default"
+    Public loggedInPassword As String = "default"
+    Public loggedInFirst As String = "default"
+    Public loggedInMiddle As String = "default"
+    Public loggedInLast As String = "default"
+    Public loggedInType As String = "Member"
+    Public loggedInUserNo As Integer
+
+    Structure Instrument
+        Public itemName As String
+        Public itemType As String
+        Public itemNo As Integer
+        Public dailyFee As Decimal
+        Public availability As String
+        Public dispNo As Integer
+    End Structure
+
+    Public instruments() As Instrument
+    Public entry As Instrument
+
+    Structure Reservation
+        Public startDate As Date
+        Public endDate As Date
+        Public resFee As Decimal
+        Public dailyFee As Decimal
+        Public totalFee As Decimal
+        Public memNo As Integer
+        Public instNo As Integer
+        Public resCancel As Boolean
+        Public resConfirm As Boolean
+        Public resClose As Boolean
+    End Structure
+    Public resEntry As Reservation
+    Public resAll() As Reservation
+
+    Public Function LoginDB(ByVal username As String, ByVal password As String) As Boolean
+        Dim loginSuccess As Boolean = False
+
+        connection = New DB2Connection(connectionString)
+        connection.Open()
+
+        Dim setSchemaSql As String = "SET SCHEMA rynde"
+        Using command As New DB2Command(setSchemaSql, connection)
+            command.ExecuteNonQuery()
+        End Using
+
+        Dim query As String = "SELECT COUNT(*) FROM USER WHERE user_id = @username AND user_pass = @password"
+
+        Using command As New DB2Command(query, connection)
+            command.Parameters.Add(New DB2Parameter("@username", username))
+            command.Parameters.Add(New DB2Parameter("@password", password))
+            Try
+                Dim result As Integer = CInt(command.ExecuteScalar())
+                If result > 0 Then
+                    loggedInUsername = username
+                    loggedInPassword = password
+                    loginSuccess = True
+
+                    query = "SELECT user_fname, user_mi, user_lname, user_type, user_no FROM USER WHERE user_id = @username"
+
+                    Using command2 As New DB2Command(query, connection)
+                        command2.Parameters.Add(New DB2Parameter("@username", username))
+
+                        Using reader As DB2DataReader = command2.ExecuteReader()
+                            If reader.Read() Then
+                                loggedInFirst = reader.GetString(0)
+                                loggedInMiddle = reader.GetString(1)
+                                loggedInLast = reader.GetString(2)
+                                loggedInType = reader.GetString(3)
+                                loggedInUserNo = reader.GetString(4)
+                            End If
+                        End Using
+                    End Using
+                    RetrieveReservations()
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+            End Try
+        End Using
+
+        connection.Close()
+
+        Return loginSuccess
+    End Function
+
+    Public Sub InsertUser(ByVal userType As String, ByVal userFName As String, ByVal userMI As String, ByVal userLName As String, ByVal userID As String, ByVal userPass As String)
+        connection = New DB2Connection(connectionString)
+        connection.Open()
+
+        Dim setSchemaSql As String = "SET SCHEMA rynde"
+        Using command As New DB2Command(setSchemaSql, connection)
+            command.ExecuteNonQuery()
+        End Using
+
+        Dim checkQuery As String = "SELECT COUNT(*) FROM USER WHERE user_id = @userID"
+
+        Using command As New DB2Command(checkQuery, connection)
+            command.Parameters.Add(New DB2Parameter("@userID", userID))
+            Try
+                Dim result As Integer = CInt(command.ExecuteScalar())
+                If result > 0 Then
+                    MessageBox.Show("User ID already exists.")
+                    connection.Close()
+                    Exit Sub
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                connection.Close()
+                Exit Sub
+            End Try
+        End Using
+
+        Dim insertQuery As String = "INSERT INTO USER (user_type, user_fname, user_mi, user_lname, user_id, user_pass) VALUES (@userType, @userFName, @userMI, @userLName, @userID, @userPass)"
+
+        Using command As New DB2Command(insertQuery, connection)
+            command.Parameters.Add(New DB2Parameter("@userType", userType))
+            command.Parameters.Add(New DB2Parameter("@userFName", userFName))
+            command.Parameters.Add(New DB2Parameter("@userMI", userMI))
+            command.Parameters.Add(New DB2Parameter("@userLName", userLName))
+            command.Parameters.Add(New DB2Parameter("@userID", userID))
+            command.Parameters.Add(New DB2Parameter("@userPass", userPass))
+            Try
+                command.ExecuteNonQuery()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+            End Try
+        End Using
+
+        connection.Close()
+    End Sub
+
+    Public Sub UpdateUser(ByVal userType As String, ByVal userFName As String, ByVal userMI As String, ByVal userLName As String, ByVal userID As String, ByVal userPass As String)
+        Dim updateQuery As String = "UPDATE USER SET user_type = @userType, user_fname = @userFName, user_mi = @userMI, user_lname = @userLName, user_id = @userID, user_pass = @userPass WHERE user_id = @loggedInUsername"
+
+        Using connection As New DB2Connection(connectionString)
+            connection.Open()
+
+            Dim setSchemaSql As String = "SET SCHEMA rynde"
+            Using commandschema As New DB2Command(setSchemaSql, connection)
+                commandschema.ExecuteNonQuery()
+            End Using
+
+            Using command As New DB2Command(updateQuery, connection)
+                command.Parameters.Add(New DB2Parameter("@userType", userType))
+                command.Parameters.Add(New DB2Parameter("@userFName", userFName))
+                command.Parameters.Add(New DB2Parameter("@userMI", userMI))
+                command.Parameters.Add(New DB2Parameter("@userLName", userLName))
+                command.Parameters.Add(New DB2Parameter("@userID", userID))
+                command.Parameters.Add(New DB2Parameter("@userPass", userPass))
+                command.Parameters.Add(New DB2Parameter("@loggedInUsername", loggedInUsername))
+                Try
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+                End Try
+            End Using
+
+            connection.Close()
+        End Using
+        loggedInFirst = userFName
+        loggedInMiddle = userMI
+        loggedInLast = userLName
+        loggedInUsername = userID
+        loggedInPassword = userPass
+    End Sub
+
+    Public Sub RetrieveInstruments(searchCriteria As String)
+        connection = New DB2Connection(connectionString)
+        connection.Open()
+
+        Dim setSchemaSql As String = "SET SCHEMA rynde"
+        Using command As New DB2Command(setSchemaSql, connection)
+            command.ExecuteNonQuery()
+        End Using
+
+        Dim selectQuery As String = "SELECT inst_name, inst_category, inst_no, inst_availability, daily_rate FROM Instrument WHERE (LOWER(inst_name) LIKE '%' || LOWER(@searchCriteria) || '%' OR LOWER(inst_category) LIKE '%' || LOWER(@searchCriteria) || '%') AND LOWER(inst_availability) = 'available'"
+
+
+
+        Using command As New DB2Command(selectQuery, connection)
+            command.Parameters.Add("@searchCriteria", DB2Type.VarChar).Value = searchCriteria
+
+            Try
+                Using reader As DB2DataReader = command.ExecuteReader()
+                    Dim tempList As New List(Of Instrument)()
+                    Dim dispNoCounter As Integer = 0
+
+                    While reader.Read()
+                        Dim instrument As New Instrument()
+                        instrument.itemName = reader.GetString(0)
+                        instrument.itemType = reader.GetString(1)
+                        instrument.itemNo = reader.GetInt32(2)
+                        instrument.availability = reader.GetString(3)
+                        instrument.dailyFee = reader.GetDecimal(4)
+                        instrument.dispNo = dispNoCounter
+
+                        tempList.Add(instrument)
+                        dispNoCounter += 1
+                    End While
+
+                    instruments = tempList.ToArray()
+                End Using
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+            End Try
+        End Using
+
+        connection.Close()
+    End Sub
+
+    Public Sub GetInstrumentByItemNo(itemNo As Integer)
+
+        For Each instrument As Instrument In instruments
+            If instrument.itemNo = itemNo Then
+                entry = instrument
+                Exit For
+            End If
+        Next
+    End Sub
+
+    Public Sub RetrieveReservations()
+        connection = New DB2Connection(connectionString)
+        connection.Open()
+
+        Dim setSchemaSql As String = "SET SCHEMA rynde"
+        Using command As New DB2Command(setSchemaSql, connection)
+            command.ExecuteNonQuery()
+        End Using
+
+        Dim selectQuery As String = "SELECT start_date, end_date, res_fee, daily_fee, total_fee, member_no, inst_no, cancelled, confirmed, closed FROM RESERVATION WHERE member_no = @loggedInUserNo"
+
+        Using command As New DB2Command(selectQuery, connection)
+            command.Parameters.Add("@loggedInUserNo", DB2Type.Integer).Value = loggedInUserNo
+
+            Try
+                Using reader As DB2DataReader = command.ExecuteReader()
+                    Dim tempList As New List(Of Reservation)()
+
+                    While reader.Read()
+                        Dim reservation As New Reservation()
+                        reservation.startDate = reader.GetDateTime(0)
+                        reservation.endDate = reader.GetDateTime(1)
+                        reservation.resFee = reader.GetDecimal(2)
+                        reservation.dailyFee = reader.GetDecimal(3)
+                        reservation.totalFee = reader.GetDecimal(4)
+                        reservation.memNo = reader.GetInt32(5)
+                        reservation.instNo = reader.GetInt32(6)
+                        reservation.resCancel = reader.GetBoolean(7)
+                        reservation.resConfirm = reader.GetBoolean(8)
+                        reservation.resClose = reader.GetBoolean(9)
+
+                        tempList.Add(reservation)
+                    End While
+
+                    resAll = tempList.ToArray()
+                End Using
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+            End Try
+        End Using
+
+        connection.Close()
+    End Sub
+
+
+End Module

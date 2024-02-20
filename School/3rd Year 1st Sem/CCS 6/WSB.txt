@@ -1,0 +1,80 @@
+deliverables
+
+0. The Project
+1. Keyline
+	main deliverables
+	stages/phases
+	Project Management
+2. Major Deliverable
+	identify interim and end deliverables
+3. Sub-deliverable
+	Itermin deliverables
+4. 
+
+Document
+	number the keylines as 1
+		major deliverables as 1.1
+			sub deliverables as 1.1.1
+
+WBS Dictionary
+
+Deliverables:
+Project Management
+	Project Initiation		
+		Objectives and Scopes
+		Stakeholders and Initial Requirements
+		Project plan and schedule
+	Design and Architecture
+		System Architecture
+		Wireframes and Prototypes
+	Backend Development
+		Server and Database Infrastructure
+		Data Management Logic
+	Frontend Development
+		Mobile App Interface
+	Testing and Quality Assurance
+		Unit Testing
+		Integration Testing
+		User Acceptance Testing
+		Bug Fixing
+	Security
+		Authentication
+		Data Privacy
+		Vulnerability Assessments
+	Documentation
+		Software Development Plan
+		User Manual
+Expense Tracking
+	Bills
+		Scheduled Bills
+		Bill Reminders
+	
+Budgeting Tools
+	Spending limits
+
+Financial Goals
+	Debt Payment
+	Monetary Savings
+Document Details
+	Image Storage
+	Receipt Text Recognition
+Financial Education
+	Resources
+	Tips and Insights
+Settings
+	Font
+	Theme
+	Localization
+
+Maintenance
+	App Performance
+
+
+Project Management
+	Outside the app
+Project Requirements
+	Features
+Development and Implementation
+	Feature Modules
+Deployment and Maintenance
+Project Closure

@@ -1,0 +1,79 @@
+CCS 5B
+Fundamentals of Information Management
+Assignment No.1: Business Rules
+
+PET SHOP
+---
+The owner of the pet shop wants to keep track of her sales to customers and purchases from her suppliers. In case a customer asks for details on a particular pet for sale, the owner wants to have detailed information on the said pet that cannot be seen on the pet’s cage. The same goes for pet accessories.
+
+*keep track of sales to customers
+*keep track of purchases from her supplies
+*detailed information of a particular pet
+*detailed information of pet accessories
+---
+Below is the summary of what had transpired during your interview with the owner. A customer can buy more than one item at the same time. Each sales transaction includes an ORNo (official receipt number), the DateOfSale, the QuantitySold (number of items bought by the customer), and the Subtotal. The subtotal is derived from multiplying the QuantitySold and the selling price of the pet or accessories. A single official receipt [one number], can contain several different items. A particular instance of an item (for example “dog shampoo”) can be bought by more than one customer (this is the case since for this kind of product, the individual pieces cannot be differentiated from each other).
+
+*a customer can buy more than one item at the same time
+*each sales transaction includes
+	-an ORNo (official receipt number)
+	-DateOfSale
+	-QuantitySold
+	-Subtotal (derived from multiplying the QuantitySold and the selling price of the pet or accessories)
+*a single official receipt [one number] can contain several different items
+*a particular instance of an item can be bought by one or more customer (category)
+---
+A supplier can be a source of more than one item. Each item can be purchased from more than one supplier. Data stored on suppliers include a supID (identifier), supName (the company 
+name), a supContactPerson (someone who the owner interacts with in the company), supLandlineNo, and supAddress. Data on each purchase transaction includes a purTransNo (identifier), the purDate, the purQuantity and the purUnitCost of each item. A Subtotal is also stored which is derived from multiplying the purQuantity and UnitCost.
+*a supplier can be a source of more than one item
+*each item can be purchased from more than one supplier
+*data stored on suppliers include
+	-supID (identifier)
+	-supName (the company name)
+	-supContactPerson (someone who the owner interacts with in the company)
+	-supLandlineNo
+	-supAddress
+*data on each purchase transaction includes 
+	-purTransNo (identifier)
+	-purDate
+	-purQuantity
+	-purUnitCost
+*a subtotal is also stored which is derived from multiplying the purQuantity and UnitCost
+---
+Data to be stored on pets include: petID (identifier), petType, petPrice, petSpecie (e.g. dog), petBreed (e.g. Dobermann), petColor (the dominant color), petBirthdate (if known), and petAge(derived if the birthdate is known), petFood (e.g. dogfood), petCare (short description on handling and care for the pet), and petQuantity (how many are in stock).
+
+*data to be stored on pets include
+	-petID (identifier)
+	-petType
+	-petPrice
+	-petSpecie (e.g. dog)
+	-petBreed (e.g. Dobermann)
+	-petColor (dominant color)
+	-petBirthdate (if known)
+	-petAge (derived if the birthdate is known)
+	-petFood (e.g. dogfood)
+	-petCare (short description on handling and care for the pet)
+	-petQuantity (how many are in stock)
+---
+Data to be stored on pet accessories include: accID(identifier), accType, accPrice, accName (e.g. dog collar), accDescription (e.g. Wide Brown Leather), accBrand, accSize (if known), and accQuantity.
+
+*data to be stored on pet accessories include
+	-accID (identifier)
+	-accType
+	-accPrice
+	-accName (e.g. dog collar)
+	-accDescription (e.g. Wide Brown Leather)
+	-accBrand
+	-accSize (if known)
+	-accQuantity
+
+
+
+
+
+
+
+
+
+
+
+

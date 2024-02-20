@@ -1,0 +1,33 @@
+Midterms NFA to DFA
+
+Step 1:
+E(q0) = {q0, q1, q2}
+E(q1) = {q1}
+E(q2) = {q2}
+E(q3) = {q3}
+
+Step 2:
+S" = E(q0) = {q0,q1,q2} -> (P0)
+S"(P0, a) = S"({q0,q1,q2}, a) = E(q1) U E(q2) = {q1, q2} -> (P1)
+S"(P0, b) = S"({q0,q1,q2}, b) = E(q1) = {q1} -> (P2)
+S"(P0, c) = S"({q0,q1,q2}, c) = E(q1) = {q1} -> P2
+S"(P1, a) = S"({q1, q2}, a) = E(q1) U E(q2) = {q1, q2} -> P1
+S"(P1, b) = S"({q1, q2}, b) = E(q1) U E(q3) = {q1, q3} -> (P3)
+S"(P1, c) = S"({q1, q2}, c) = E(q1) = {q1} -> P2
+S"(P2, a) = S"(q1, a) = E(q1) = {q1} -> P2
+S"(P2, b) = S"(q1, b) = E(q1) = {q1} -> P2
+S"(P2, c) = S"(q1, c) = E(q1) = {q1} -> P2
+S"(P3, a) = S"({q1, q3}, a) = E(q1) = {q1} -> P2
+S"(P3, b) = S"({q1, q3}, b) = E(q1) = {q1} -> P2
+S"(P3, c) = S"({q1, q3}, c) = E(q1) U E(q3) = {q1, q3} -> P3
+
+Step 3:
+
+(P0) = {q0, q1, q2}
+(P1) = {q1, q2}
+(P2) = {q1} 
+(P3) = {q1, q3}
+
+Step 4:
+
+

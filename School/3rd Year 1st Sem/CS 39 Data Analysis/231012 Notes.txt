@@ -1,0 +1,66 @@
+231012 Notes
+
+Quiz 4 answers
+
+It is the process of authorizing the project or phase is part of the project scope management
+-Initiation
+
+Planning is of major importance to a project because the project involves doing something that ______________________
+-has not been done before.
+
+Controlling includes taking (preventive) action in anticipation of (possible) problems, it contains core (process) and facilitating processes
+
+includes the processes required to acquire goods and services, to attain project scope, from outside the performing organization
+-Project Procurement Management
+
+includes the processes required to make the most effective use of the people involved with the project
+-Project Human Resource Management
+
+includes the process required to ensure timely completion of the project
+-Project Time Management
+
+includes the processes required to ensure that the project includes all the word required, and only the work required, to complete the project successfully.
+-Project Scope Management
+
+includes the processes required to ensure that the project is completed within the approved budget.
+-Project Cost Management
+
+includes maximizing the probability and consequences of positive events and minimizing the probability and consequences of adverse events to project objects
+-Project Risk Management
+
+includes the process required to ensure that the various elements of the project are properly coordinated.
+-Project Integration Management
+
+It includes all activities of the overall management function that determine quality policy, objectives, and responsibilities and implements them by means
+-Project Quality Management
+
+includes the processes required to ensure timely and appropriate generation, collection, dissemination, storage, and ultimate disposition of project information.
+-Project Communcations Management
+
+A project is a (temporary) endeavor undertaken to create a unique product or service. For many organizations, projects are a means to (respond) to those request that cannot be addressed within the organization’s (normal) operational limits
+
+The executing processes include (core) processes and facilitating processes
+
+Notes:
+Project Management Process
+-Initiation
+-Planning
+-Executing
+-Monitoring and Controlling
+-Closing
+IPEMC
+
+RISC CTHP Q
+
+The PM Knowledge Areas
+Risk
+Integration
+Scope
+Cost
+Communicatinos
+Time
+Human Resource
+Procurement
+Quality
+
+

@@ -1,0 +1,98 @@
+09/01/2023
+CS 37
+
+SEARCH
+-just like driving directions
+
+Terminology
+agent - entity that perceives its environment and acts upon that environment
+state - a configuration of the agent and its environment
+initial state - 
+actions - choices that can be made in a state
+ACTIONS(s) - returns the set of actions that can be executed in state s
+transition model - a description of what state results from performing any applicable action in any state
+RESULT(s,a) - returns the state resulting from performing action a in state s
+state space - the set of all states reachable from the initial state by any sequence of actions
+goal test - way to determine whether a given state is a goal state
+path cost - numerical cost associated with a given path
+
+Search Problems
+
+-initial state
+-actions
+-transitional model
+-goal test
+-path cost function
+
+optimal solution - a solution that has the lowest path cost among all solutions
+
+node
+a data structure that keeps track of 
+-a state
+-a parent (node that generated this node)
+-an action (action applied to parent to get node)
+-a path cost (from initial state to node)
+
+Aprroach
+starts with a frontier that contains the initial state
+Repeat: 
+-if the frontier is empty, then no solution
+-removve a node from the frontier
+-if node contains goal state, return the solution
+-Expand node, add resulting nodes to the frontier
+
+Revised Approach
+Start with a frontier that contains the initial state
+Start with an empty explored set
+Repeat:
+-if the frontier is empty, then no solution
+-remove a node from the frontier
+-if node contains goal state, return the solution
+-add the node to the explored set***
+-expand node, add resulting nodes to the frontier if thet aren't already in the frontier or the explored set
+
+stack - last-in first-out data type
+
+Depth-First Search
+deepest first in the frontier
+
+Breadth-First Search
+search algorithm that always expands the shallowest node in the frontier
+-uses a queue (first-in first-out data type)
+
+uninformed search
+-search strategy that uses no problem-specific knowledge
+
+informed search
+-search strategy that uses problem-specific knowledge to find solutions more efficiently
+
+greedy best-first search
+-search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function h(n)
+
+05.09.23
+
+A* search
+
+search algorithm that expands node with lowest balue of g(n) + h(n)
+
+g(n) = cost to reach node
+h(n) = estimated cost to goal
+
+Adveservial Search
+
+Minimax
+
+MAX (x) aims to maximize score
+MIN (O) aims to minimize score
+
+S0: initial state
+Player(s): returns which player to move in state s
+Actions(s): returns legal moves in state s
+Result(s, a): returns state after action a taken in state s
+Terminal(s): checks if state s is a terminal state
+Utility(s): final numerical value for terminal state s
+
+
+
+
+

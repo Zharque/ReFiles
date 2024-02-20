@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="calculatorStyles.css">
+    <title>Daval Calculator</title>
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="mb-4" style="text-align: center;">Daval Calculator</h2>
+        <div class="row justify-content-center">
+            <div class="col-9 col-sm-9 col-md-7 col-lg-5 col-xl-4" style="max-width: 325px;">
+                <div class="calcOuter">
+                    <div class="container">
+
+                        <div class="row mb-4">
+                            <div class="calcDisplay">
+                                <span id="resultPast2" style="font-weight: 200;" class="pastSpan"></span><br>
+                                <span id="resultPast1" style="font-weight: 200;" class="pastSpan"></span><br>
+                                <span id="resultDisplay" style="font-size: 1.5em; font-weight:600;">0</span>
+                            </div>
+                        </div>
+
+                        <div class="row my-2">
+                            <div class="col-3" onclick="calculatorClear()">
+                                <div class="calcButton cb1 clear">
+                                    C
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorBackspace()">
+                                <div class="calcButton cb1 operator">
+                                    ⌫
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorPercent()">
+                                <div class="calcButton cb1 operator">
+                                    %
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorOperator('&divide;')">
+                                <div class="calcButton cb1 operator">
+                                    ÷
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="row my-2">
+                            <div class="col-3" onclick="calculatorNumber(7)">
+                                <div class="calcButton cb2 number">
+                                    7
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorNumber(8)">
+                                <div class="calcButton cb2 number">
+                                    8
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorNumber(9)">
+                                <div class="calcButton cb2 number">
+                                    9
+                                </div>
+                            </div>
+                            <div class="col-3"  onclick="calculatorOperator('&times;')">
+                                <div class="calcButton cb1 operator">
+                                    ×
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row my-2">
+                            <div class="col-3" onclick="calculatorNumber(4)">
+                                <div class="calcButton cb2 number">
+                                    4
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorNumber(5)">
+                                <div class="calcButton cb2 number">
+                                    5
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorNumber(6)">
+                                <div class="calcButton cb2 number">
+                                    6
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorOperator('–')">
+                                <div class="calcButton cb1 operator">
+                                    –
+                                </div>
+                            </div>
+                            
+                        </div> 
+
+                        <div class="row my-2">
+                            <div class="col-3" onclick="calculatorNumber(1)">
+                                <div class="calcButton cb2 number">
+                                    1
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorNumber(2)">
+                                <div class="calcButton cb2 number">
+                                    2
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorNumber(3)">
+                                <div class="calcButton cb2 number">
+                                    3
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorOperator('+')">
+                                <div class="calcButton cb1 operator">
+                                    +
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="row my-2">
+                            <div class="col-3" onclick="calculatorNumber(0); calculatorNumber(0);">
+                                <div class="calcButton cb2 zero">
+                                    00
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorNumber(0)">
+                                <div class="calcButton cb2 zero">
+                                    0
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorDecimal()">
+                                <div class="calcButton cb2 number">
+                                    .
+                                </div>
+                            </div>
+                            <div class="col-3" onclick="calculatorResult()">
+                                <div class="calcButton cb3 operator">
+                                    =
+                                </div>
+                            </div>
+                        </div> 
+
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <script src="calculatorScripts.js"></script>
+</body>
+</html>

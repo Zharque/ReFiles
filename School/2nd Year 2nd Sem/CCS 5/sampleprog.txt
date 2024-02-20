@@ -1,0 +1,15 @@
+create table sampleprog.COURSE (CourseNo varchar(10) not null, coursetitle varchar(30) not null, CourseNoUnits int not null, CourseReq varchar(30), primary key (courseno))
+
+create table sampleprog.class (ClassNo varchar(10) not null, courseno varchar(10) not null, classsection varchar(30) not null, classsize int not null, primary key (classno), foreign key (courseno) references sampleprog.course(courseno))
+
+create table sampleprog.student (studid int not null, studlname varchar(30) not null, studfname varchar(30) not null, studdegree varchar(10) not null, primary key (studid))
+
+create table sampleprog.enrollment (enrollno varchar(10) not null, studid varchar(10) not null, classno varchar(10) not null, enroldate varchar(30) not null, courseno varchar(10), coursetitle varchar(30), primary key (enrollno), foreign key (studid) references sampleprog.student(studid), foreign key (classno) references sampleprog.course(courseno))
+
+create table sampleprog.account(acctid int not null primary key, userid varchar (10) not null, password varchar(10) not null, studid int not null, foreign key(studid) references sampleprog.student on update no action on delete cascade)
+
+alter table sampleprog.class add column avail_slot int
+
+alter table sampleprog.student alter column studid set not null
+
+alter table sampleprog.student alter column studid set data type int

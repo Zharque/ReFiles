@@ -1,0 +1,40 @@
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\x64\Debug\Enrollment.exe.config
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\x64\Debug\Enrollment.exe
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\x64\Debug\Enrollment.pdb
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\bin\x64\Debug\Enrollment.xml
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\x64\Debug\Enrollment.FrmStudMaint.resources
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\x64\Debug\Enrollment.Resources.resources
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\x64\Debug\Enrollment.vbproj.GenerateResource.Cache
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\x64\Debug\Enrollment.exe
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\x64\Debug\Enrollment.xml
+C:\Users\CC10\AppData\Local\Temporary Projects\Enrollment\obj\x64\Debug\Enrollment.pdb
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\bin\x64\Debug\Enrollment.exe.config
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.exe
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.xml
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.pdb
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\bin\x64\Debug\Enrollment.exe
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\bin\x64\Debug\Enrollment.pdb
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\bin\x64\Debug\Enrollment.xml
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.vbprojResolveAssemblyReference.cache
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.FrmStudMaint.resources
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.Resources.resources
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.vbproj.GenerateResource.Cache
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.FrmEnroll.resources
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\bin\x64\Debug\Enrollment.exe.config
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.exe
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.xml
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.pdb
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\bin\x64\Debug\Enrollment.exe
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\bin\x64\Debug\Enrollment.pdb
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\bin\x64\Debug\Enrollment.xml
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.vbprojResolveAssemblyReference.cache
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.FrmStudMaint.resources
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.FrmEnroll.resources
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.Resources.resources
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.vbproj.GenerateResource.Cache
+D:\LECTURE\SCHOOL YEAR 2022 - 2023\SECOND SEMESTER\CCS 5 AB Fundamentals of Information Managment\SAMPLE PROGRAMS\SECTION B\Enrollment\Enrollment\obj\x64\Debug\Enrollment.FrmLogin.resources
+D:\CCS 5B Fund of Info Mgt\Enrollment\Enrollment\obj\x64\Debug\Enrollment.FrmLogin.resources
+D:\Re\School\2nd Year 2nd Sem\CCS 5\vb enrollment\Enrollment\bin\x64\Debug\Enrollment.exe.config
+D:\Re\School\2nd Year 2nd Sem\CCS 5\vb enrollment\Enrollment\obj\x64\Debug\Enrollment.exe
+D:\Re\School\2nd Year 2nd Sem\CCS 5\vb enrollment\Enrollment\obj\x64\Debug\Enrollment.xml
+D:\Re\School\2nd Year 2nd Sem\CCS 5\vb enrollment\Enrollment\obj\x64\Debug\Enrollment.pdb

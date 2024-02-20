@@ -1,0 +1,85 @@
+Test 1
+A |risk| is a chance of a negative event.  It is the combination of |threats| and |vulnerabilities|.  A |threat| is your feeling that something bad might happen.  It can range from innocent mistakes made by employees to natural disasters.  While some people think of vulnerability as a |weakness|, from a |risk management| perspective it must be thought of as the |birthplace| of innovation, creativity, and change.
+
+|Risk management| is the process of identifying, analyzing, and responding to |risk| factors throughout the life of a project and in the best interests of its objectives.  Risk |identification| can increase |acceptance| of a program or project as everyone is given a chance to document all the things that might go wrong.  Risk |analysis| is the process of developing context information for each |risk| such as moment of |risk|.  Assessing the |probability & impact| of each |risk| is important.  These can be single estimates such as high, medium, and low.  Risk treatment examples are |acceptance|, mitigation, transfer, |sharing| or |avoidance|.  |Residual risks| include secondary risks that result from |risk| mitigation, transfer or |sharing|.  Risk |control| is the process of implementing identified |control| for |risk mitigation|, |sharing|, |avoidance| and transfer.  And lastly, |monitor and review| means continuously identifying new risks as things progress, monitor implementation of |control| and communicate |risk |to stakeholders.
+
+Risk |avoidance| is a strategy where the project team acts to remove the |threat| of the |risk| or protect from the impact.  Examples of this are extending the schedule and reducing/removing the scope.  |Risk mitigation| is the strategy whereby the project team acts to reduce the probability of the |risk| occurring.  An example of this is increasing the testing of the software.  Risk |transference| involves shifting the |risk| |threat| and impact to a 3rd party. It does not eliminate the |risk| but transfers the responsibility and ownership to the 3rd party.  An example of this purchasing insurance.  Risk |acceptance| means the team acknowledges the |risk| and its potential impact but decides not to take any preemptive action to prevent it.  It is dealt with only if it occurs. |Sharing| a |risk| involves allocating some or all of the ownership of the |risk| and opportunity to a 3rd party who has the best chance of meeting the objective.  |Risk enhancement| is used to increase the probability or impact of a positive |risk| occurring.   Risk |exploitation| is used when the team wants to ensure that the |risk| opportunity is realized, and any uncertainty is removed.  An example of this is to develop a project team with the most talented resources.   |Accepting| a |risk| means you intend to take advantage of the opportunity if it becomes available, but not actively pursuing it.
+
+Test 2
+Identify 4 risks
+Categorize the 4 risks
+Response strategy for the 4 risks
+2 Functional user requirements
+2 functional system requirements
+2 non-functional requirements
+
+Notes:
+
+Categories of Risk
+1. Schedule
+2. Budget
+3. Operational
+4. Technical
+5. Other
+
+Types of Risk
+Executive Support
+Scope
+Cost Management
+Change Managementment
+Stakeholders
+Resource and Team
+Architechture
+Design
+Technical
+Integration
+Communication
+Requirements
+Decision Quality and Issue Resolution
+Feasibility
+Procurement
+Quality
+Authority
+Aprprovals & Red Tape
+Organizational
+External
+Project Management
+Secondary Risks
+Usser Acceptance
+Commercial
+
+4 Negative Risk Response Strategies
+Avoidance
+Transfer
+Mitigate
+Accept
+
+4 Positive Risk Response Strategies
+Exploit
+Enhance
+Share
+Accept
+
+User Requirements
+-services the system is expected to provide to system users and the constraints under which it must operate
+Ex:
+The user shall be able to generate monthly summary and detailed sales reports.
+ A user shall be able to search the appointments lists for all clinics
+
+System Requirements
+-detailed descriptions of the software sysyem's functions, services, and operational constrains (what the system should do) 
+
+Ex:
+The system shall allow the user to generate monthly summary and detailed sales reports.
+The system shall generate each day, for each clinic, a list of patients who are expected to attend appointments that day.
+
+Functional Requirements
+-statements of services that the system should provide or what the system should not do
+-Functional user requirements are usually described in an abstract way that can be understood by system users
+-Functional system requirements vary from general requirements covering what the system should do to very specific requirements reflecting local ways of working or an organization’s existing systems
+
+Non-functional Requirements
+-not directly concerned with the specific services delivered by the system 
+-timing constraints, constraints on the development process, and constraints imposed by standards
+Ex:
+Medical staff shall be able to use all the system functions after four hours of training. After this training, the average number of errors made by experienced users shall not exceed two per hour of system use

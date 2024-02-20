@@ -1,0 +1,19 @@
+231019 seatwork
+A database has five transactions. Let min_sup = 60% and min_conf = 80%.
+
+min_sup = 60% of 5 transactions
+min_sup = 3
+
+
+-
+Assuming a min. confidence of 80%, the final set of rules reported by Apriori are:
+{E,O} -> {K}
+{O,K} -> {E}
+{O} -> {E,K}
+{E} -> {K}
+{K} -> {E}
+
+{O} -> {E}
+{O} -> {K}
+{M} -> {K}
+{Y} -> {K}

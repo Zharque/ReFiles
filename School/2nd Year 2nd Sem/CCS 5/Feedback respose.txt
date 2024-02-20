@@ -1,0 +1,64 @@
+Thank you for the feedback sir. After discussing with my group, this is our new ERD following our changes.
+
+*image here*
+
+
+
+
+
+
+we've decided on the following changes to the business rules and ERD:
+
+In regards to the original rule 3, we replaced RESERVATION with REQUEST and instead, RESERVATION is our associative entity. Previously, we were not sure what to place as the associative entity between the ternary relationship, which is why we mistakenly used RESERVATION, one of our entities, to be the associative entity. Now we realize this was a mistake, and instead we decided to adjust our business rule. 
+
+OLD:
+One user makes one or more /reservations/ for one or more items. 
+One item is made one or more /reservations/ for by one or more users. 
+One /reservation/ is made by one user for one item.
+
+NEW:
+One user makes one or more /requests/ for one or more items. 
+One item is made one or more /requests/ for by one or more users. 
+One /request/ is made by one user for one item.
+
+In order to reflect that it is a ternary relationship, we removed the contents of the relationships and kept it blank. This is because we were not able to remove the diamond shapes in ERDPlus. Because of this, we previously wrote "contained in" and "made by" inside the relationships, which we now realize were misleading. Now, we opted to keep them blank, as we are unable to connect two entites without a relationship due to the limitations of ERDPlus.
+
+We have also changed the entity ADMIN to instead be MANAGER to have a more appropriate term for the entity, as we have designed there to be multiple managers over a period of time since they will be students designated by the advisor and will have to be replaced once the students graduate. The responsibility of the manager includes setting an item to be unavailable if the student were unable to return the item in time, in addition to adding, editing, and deleting of items.
+
+We realized that it is not appropriate for the MANAGER to rent ITEMS, and so we changed it to only so that MEMBER will be the one renting.If the managers want to rent, then they will have to log-in using their member account instead of their manager account. 
+
+Our group discussed the issue regarding if a member needs to reserve before they are able to rent. In order to make it easier to implement, we decided that there will no longer to a distinction in the rules between rent and reservation. If a user wants to rent for the current date, then it will be treated as a reservation with the start and end date as the current date. Because of that, we've decided to remove our original business rules 1 and 2.
+
+With all these changes in mind, we have narrowed our business rules down to three:
+
+1. One member makes one or more requests for one or more items. 
+One item is contained in one or more requests by one or more members. 
+One request is made by one member for one item.
+
+2. One user cancels zero or more requests. 
+One request is canceled by zero or one user.
+
+3. One manager revises zero or more items. 
+One item is revised by zero or one manager.
+
+We would like to ask sir if there are more changes we need to implement. In particular, we are concerned that our business rules may too be little now that we've removed the redundant rules, so we'd like to ask if 3 business rules will be sufficient.
+
+
+
+
+
+Thank you for the feedback sir. Moving forward, we will be using Dia to make our ERD. We will also be changing our entity "item" to be "instrument" and adjust the attributes accordingly.
+
+We will also instead change the ternary relationship to include "instrument", "member", and "manager", where the manager will be the one who will approve the reservation request. The associative entity will be "reservation" and the attributes of our previous entity "request" will be placed in "reservation".
+
+We will also be adding rules in regards the release, payment, and return of the instruments.
+
+There is a question we would like to ask sir, as we were not able to find a clear answer. It is in regards to our rule 2 where 'one user cancels zero or more requests'. Now that we will be removing "request", we would like to adjust the rule to be 'one user cancels zero or more reservations'. Our concern is that "reservation" is an associative entity. Is it okay for the associative entity to have a relationship with other entities outside of the ternary relationship? We want to have a relationship between "user" and "reservation" where the reservation can be canceled, but since reservation is not a regular entity, we are uncertain if it is allowed. 
+
+
+Our intention for the relationship 'revises' is that the manager is able to add new instruments if the orchestral group buys new instruments. The manager can also adjust the value of the instrument and also its daily rate if necessary. The manager can also remove instruments if they become damaged, so that they will no longer be shown on the app. The manager can also set an instrument to be 'Unavailable' in cases where the members were not able to return the instrument in time. We are thinking about changing this to be 'updating' instead if it is more suitable, will this be okay sir?
+
+Thank you for the confirmation on the associative entity.
+
+
+
