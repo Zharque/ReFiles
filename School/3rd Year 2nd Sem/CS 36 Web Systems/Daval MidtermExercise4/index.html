@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daval Midterm Exercise 4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div class="head"><i>DAVAL REVERSER</i></div>
+    <div id="inputDiv" class="display1">
+        <span class="text1">Input sentence: </span>
+        <input class="text1" type="text" id="input1" onkeypress="handleKeyPress(event)">
+        <button type="button" onclick="verifyInput(document.getElementById('input1').value)" class="buttonStyle">Submit</button>
+    </div>
+    
+    <div id="results" class="display2" style="display: none">
+        <p class="text1"> 
+            <span id="displayResult"></span>
+        </p>
+    </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

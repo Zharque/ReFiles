@@ -1,0 +1,9 @@
+x <- c(5,4,3,2,1)
+y <- c(1,2,3,4,5)
+barplot(x,y, col = "blue", main = "With Coloring")
+
+funcNeg = function(x) {if(x<0) print ("Negative") else print("Positive")}
+
+funcOdd = function(x) {if(x%%2==1) print ("Odd") else print("Even")}
+
+for (x in 1:10) {print(x)}

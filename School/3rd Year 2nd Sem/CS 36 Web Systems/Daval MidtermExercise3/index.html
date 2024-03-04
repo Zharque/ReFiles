@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daval Midterm Exercise 3</title>
+    <link rel="stylesheet" href="circleStyles.css">
+</head>
+<body>
+    <div class="head"><i>DAVAL CIRCLE</i></div>
+    <div id="inputDiv" class="display1">
+        <span class="text1">Input circle radius: </span>
+        <input class="text1" type="text" id="radiusInput" onkeypress="handleKeyPress(event)" style="padding-left: 5px;">
+        <button type="button" onclick="circleCompute(document.getElementById('radiusInput').value)" class="buttonStyle">Compute</button>
+    </div>
+    
+    <div id="results" class="display2" style="display: none">
+        <p class="text1">diameter = 
+            <span id="diameterDisplay"></span>
+        </p>
+    
+        <p class="text1">area =
+            <spa id="areaDisplay"></spa>
+        </p>
+        
+        <p class="text1">circumference =
+            <span id="circumferenceDisplay"></span>
+        </p>
+    </div>
+    <div id="error" class="display2" style="display: none;">
+        <p class="text1" style="color:rgb(250, 0, 0); font-weight: 600;">Invalid input, it must be a number.</p>
+    </div>
+
+    <script src = "circle.js"></script>
+</body>
+</html>

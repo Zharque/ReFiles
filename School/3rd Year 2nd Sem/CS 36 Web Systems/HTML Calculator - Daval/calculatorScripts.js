@@ -10,7 +10,7 @@ function updateDisplay(newResult){
     var displaySpan = document.getElementById("resultDisplay");
 
     if (newResult === ""){
-        newResult = 0;
+        newResult = 0;  
     }
 
     displaySpan.textContent = newResult.toString();

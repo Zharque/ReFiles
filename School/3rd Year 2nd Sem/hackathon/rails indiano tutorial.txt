@@ -1,0 +1,5 @@
+rails indiano tutorial
+rails new myproject
+rails generate controller root
+create html erb files
+change root_controller by adding def

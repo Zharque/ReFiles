@@ -1,0 +1,65 @@
+10 minute presentation
+1 minute intro
+5 minutes pitch and demo
+5 minutes for the qna
+
+Jobtarget Philippines
+
+Hackathon
+TalentConnect Enhancement
+Hackathon Challenge
+
+
+Objective
+Develop an innovative web or mobile applciation that significantly enhances the hiring and cadidate search experience or improves the inter and cadidate discovery process for recruiters and hiring managaers
+
+Key features
+
+Smart Candidate Search
+implements an advanced search algorithm that allows recruiters to find candidates based on a combination of skills, experience, location, and other relevant focotors.
+
+Interview Scheduling Optimization
+
+Virtal Interview Platform
+develop a virtual interview platform that supposed various interview formats (video audio writter a
+
+Ehanced Candidate Profiles
+
+automated pre screening questions
+
+feedback and analytics dashboard
+
+interactive skill assessments
+
+diversity and inclusion tracker
+
+mobile-first experience
+
+
+
+pitch and demo
+
+the presenter must start with a brief presentation of the app which is about 60 seconds and then proceed to the demo proper
+
+
+demo tips and tricks
+
+avoid too many texts in slides
+
+unique value proposition
+what value does the app provide to the user?
+if i am of the user, whats in it for me
+do not focus on features, focus on the tangible benefits
+
+technologies used
+just enumerate the technologies and dont add definitions
+
+the pitch
+you need to relax, rehears , reheasrse, reherse
+
+your job is to convey a message to your audience that your app is a rock start. please dont read your presentation slide.
+
+
+
+
+
