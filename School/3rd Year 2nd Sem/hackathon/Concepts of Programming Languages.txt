@@ -1,0 +1,61 @@
+Concepts of Programming Languages
+
+Chapter 1
+1.1 Reasons for Studying Concepts of Programming Languages
+-Increased capacity to express ideas
+-Improved background for choosing appropriate languages
+-Increased ability to learn new languages
+-Better understanding of the significance of implementation
+-Better use of languages that are already known
+-Overall advancement of computing
+
+1.2 Programming Domains
+1.2.1 Scientific Applications
+-Scientific applications used arrays, matrices, counting loops and selections
+-FORTRAN was the first language for scientific application
+
+1.2.2 Business Applications
+-The first successfull high-level language for business was COBOL
+
+1.2.3 Artificial Intelligence
+-The first widely used programming language developed for AI applications was the functional language LISP in 1959
+-In early 1970s, an alternative approach appeared which was logic programming using the Prolog language
+-More recently, they are written in systems languages such as C
+
+1.2.4 Systems Programming
+-Systems software is the operating system and the programming sypport tools of a computer system
+
+1.2.5 Web Software
+-markup languages, such as HTML, which is not a programming language
+-general-purpose programming languages, such as Java
+-scripting language, such as JavaScript or 
+PHP
+
+1.3 Language Evaluation Criteria
+-programming languages are evaluated on Readability, Writability, Reliability
+1.3.1 Readability
+1.3.1.1 Overall Simplicity 
+-The simplicity of a programming language is essential for its readability.  Languages with too many features, multiple ways to do the same thing (feature multiplicity), and haphazard operator overloading create confusion. This can lead to programmers only using a subset of the language and misunderstanding code written by others. While simplicity is crucial, it can go too far.  Assembly language, for example, is overly simple, resulting in longer, less structured, and harder-to-understand programs. The key is finding a balance of simplicity that supports clear structure and avoids unnecessary complexity.
+1.3.1.2 Orthogonality
+Orthogonality in programming languages is about how features can be combined. 
+ 1.3.1.3 Data Types
+ Having the right data types built into a programming language makes the code more readable and eliminates the potential for misinterpreting what values represent.
+1.3.1.4 Syntax Design
+good syntax design makes code easier to read by using keywords clearly, avoiding confusing naming practices, and making the code's appearance reflect its meaning whenever possible.
+1.3.2 Writability
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

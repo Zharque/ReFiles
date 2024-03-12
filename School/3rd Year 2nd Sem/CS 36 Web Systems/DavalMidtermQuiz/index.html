@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <title>Daval Midterm Quiz</title>
+</head>
+<body>
+  <p id="dog1"></p>
+  <p id="dog2"></p>
+  <p id="dog3"></p>
+
+  <script>
+    document.getElementById("dog1").innerHTML = "If your dog is 7 years old in human age, it is " + calculateDogAge(7, 7) + " years in dog age!";
+    document.getElementById("dog2").innerHTML = "If it is 2 years old in human age, then it is " + calculateDogAge(2, 7) + " years in dog age!";
+    document.getElementById("dog3").innerHTML = "And if it's 17 years old in human age, it is " + calculateDogAge(17, 7) + " years in dog age!";
+    
+    function calculateDogAge(humanAge, conversionRate){
+        return humanAge * conversionRate;
+    }
+  </script>
+</body>
+</html>
